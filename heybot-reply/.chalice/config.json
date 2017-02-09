@@ -1,0 +1,5 @@
+{
+  "lambda_arn": "arn:aws:lambda:us-east-1:082917317253:function:heybot-reply", 
+  "app_name": "heybot-reply", 
+  "stage": "dev"
+}
