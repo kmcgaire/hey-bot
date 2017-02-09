@@ -7,19 +7,21 @@ BASIC = [
     {'msg':"when are you free?"},
     {'msg':"want to video chat?"},
     {'msg':'what are you doing this weekend?'},
-    {'msg':"I made this graph of how this conversation is going. " +u"\U0001F4C9"},
-    {'msg':"how about we play truth or dare?"},
-    {'msg':"who's lurking in here?"}
+    {'msg':"I made a graph of how this conversation is going. " +u"\U0001F4C9"},
+    {'msg':'knock knock, anyone here?'}
         
 ]
 
 INTROS = [
     {'msg':"where are you guys from?"},
+    {'msg':"anyone want to play truth or dare?"},
     {'msg':"is anyone here single?"},
     {'msg':"what have I missed?"},
-    {'msg':"how is everyone!"},
     {'msg':"what do you all like to listen to?"},
-    {'msg':"how old is everyone?"}
+    {'msg':"how old is everyone?"},
+    {'msg':"who's lurking in here?"},
+    {'msg':"is anyone here as bored as me?"},
+    {'msg':"who else is watching Netflix rn?"}
 ]
 
 NEWS = [
@@ -40,7 +42,6 @@ FACTS = [
 ]
 
 CONVO_SPARK = [
-    {'msg':"two truths and a lie. Ready? Go!"},
 	{'msg':'have you ever got into big trouble with your parents?'},
 	{'msg':'what is your spirit animal?'},
 	{'msg':'what is the weirdest thing you have ever eaten?'},
@@ -93,4 +94,4 @@ PICK_UP = [
 	]
 
 POTENTIAL_SRS = [(3, BASIC), (3, INTROS), (5, NEWS), (3, CONVO_SPARK), (4, PICK_UP), (2, FACTS)]
-SR_LIST = [sr['msg'] for b in [BASIC, INTROS, FACTS, CONVO_SPARK, PICK_UP] for sr in b]
+SR_LIST = set([sr['msg'] for b in [BASIC, INTROS, FACTS, CONVO_SPARK, PICK_UP] for sr in b])
