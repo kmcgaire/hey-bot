@@ -35,7 +35,7 @@ NEWS = [
 
 FACTS = [
 {'msg':"apparently 'cherophobia' is the fear of fun."},
-{'msg':"did u know bikinis and tampons invented by men?"},
+{'msg':"did u know bikinis and tampons were invented by men?"},
 {'msg':"I heard average person's yearly fast food intake will contain 12 pubic hairs."},
 {'msg':"did you know humans share 50% of their DNA with bananas?"},
 {'msg':"did you know Trump is the oldest president to assume office?"}
