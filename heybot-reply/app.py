@@ -10,7 +10,7 @@ from chalicelib import BOT_USERNAME, BOT_API_KEY
 from chalicelib import handle_message
 
 app = Chalice(app_name='heybot')
-# app.debug = True
+app.debug = True
 app.log.setLevel(logging.INFO)
 
 
@@ -45,32 +45,52 @@ def incoming():
 
     if outgoing_messages:
         app.log.info('Outgoing messages: {}'.format([m.to_json() for m in outgoing_messages]))
-        # custom_event(message.body)
 
     if outgoing_messages:
         kik.send_messages(outgoing_messages)
 
 	return '', 200
 
+
+
+
+
 # metrics handler
+
+# emoji_pattern = re.compile(
+#     u"(\ud83d[\ude00-\ude4f])|"  # emoticons
+#     u"(\ud83c[\udf00-\uffff])|"  # symbols & pictographs (1 of 2)
+#     u"(\ud83d[\u0000-\uddff])|"  # symbols & pictographs (2 of 2)
+#     u"(\ud83d[\ude80-\udeff])|"  # transport & map symbols
+#     u"(\ud83c[\udde0-\uddff])"  # flags (iOS)
+#     "+", flags=re.UNICODE)
 
 # import boto3
 # client = boto3.client('cloudwatch')
 
-# def custom_event(event_id):
+# def custom_event(msg):
+
 #     client.put_metric_data(
 #             Namespace='Custom Metrics',
 #             MetricData=[
 #                 {
-#                     'MetricName': event_id,
+#                     'MetricName': 'heybot',
 #                     'Dimensions': [
 #                         {
-#                             'Name': 'USER_EVENT',
-#                             'Value': 'SUCCESS'
+#                             'Name': 'from_user',
+#                             'Value': msg.from_user
+#                         },
+#                         {
+#                             'Name': 'body',
+#                             'Value': emoji_pattern.sub(r'E', msg.body) #no emoji
+#                         },
+#                         {
+#                             'Name': 'is_mention',
+#                             'Value': str(msg.mention)
 #                         },
 #                     ],
-#                     'Value': 1.0,
-#                     'Unit': 'Count'
+#                     "Value":1,
+#                     "Unit": 'Count'
 #                 },
 #             ]
-#         )
+        # )

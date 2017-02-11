@@ -1,0 +1,4 @@
+{
+  "app_name": "export_logs_to_s3", 
+  "stage": "dev"
+}

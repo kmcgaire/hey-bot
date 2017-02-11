@@ -1,97 +1,147 @@
-BASIC = [
-    {'msg':"how are you?"},
-	{'msg':'I miss you.'},
-	{'msg':"what are you up to?"},
-    {'msg':"im bored..."},
-    {'msg':"when's the last time I said I love you?"},
-    {'msg':"when are you free?"},
-    {'msg':"want to video chat?"},
-    {'msg':'what are you doing this weekend?'},
-    {'msg':"I made a graph of how this conversation is going. " +u"\U0001F4C9"},
-    {'msg':'knock knock, anyone here?'}
-        
+FORK = u"\U0001F374" 
+GRAPH = u"\U0001F4C9"
+WAVE_HAND = u"\U0001F44B"
+
+BASIC_1v1 = ["how are you?",
+'I miss you.',
+"what are you up to?",
+"im bored...",
+"when's the last time I said I love you?", 
+"when are you free?", 
+"want to video chat?", 
+'what are you doing this weekend?', 
+"I made a graph of how this conversation is going. " + GRAPH, 
+'knock knock, anyone here?']
+
+BASIC_GROUP = [
+"where are you guys from?",
+"anyone want to play truth or dare?",
+"is anyone here single?",
+"what have I missed?",
+"what do you guys like to listen to?",
+"how old is everyone?",
+"who's lurking in here?",
+"is anyone here as bored as me?",
+"who else is watching Netflix rn?"
 ]
 
-INTROS = [
-    {'msg':"where are you guys from?"},
-    {'msg':"anyone want to play truth or dare?"},
-    {'msg':"is anyone here single?"},
-    {'msg':"what have I missed?"},
-    {'msg':"what do you all like to listen to?"},
-    {'msg':"how old is everyone?"},
-    {'msg':"who's lurking in here?"},
-    {'msg':"is anyone here as bored as me?"},
-    {'msg':"who else is watching Netflix rn?"}
-]
-
-NEWS = [
-{'title': "Make Love Not Walls", 'url': 'http://bbc.in/2lsP1z0', 'msg':'did you hear that Trump is building a wall?'},
-{'title': "Nintendo Switch", 'url': 'http://bit.ly/2lmtECQ', 'msg':'did you see that Nintendo is launching a new console on March 3rd?'},
-{'title': "Teens Leaving Facebook", 'url': 'http://wapo.st/2lsXBxC', 'msg':'did you hear teens are leaving Facebook?'},
-{'title': "The Dangers of 'Dripping'", 'url': 'http://usat.ly/2ktY3gJ', 'msg': "do you know what 'dripping' is and why it's dangerous?"},
-{'title': "What Drake Thinks About Trump", 'url': 'http://bit.ly/2kQyeIV', 'msg':"did you hear Drake's recent slam on Trump?"},
-{'title': "Silicon Valley's Legal Action Against Trump", "url": 'http://ind.pn/2kQxtPW', 'msg': "did you see the companies that are taking legal action on Trump's immigration ban?"}
-]
+NEWS = {
+"Did you see Kristen Stewart Rocked Spanx as a sress on 'SNL'?":{"Kristen Stewart Rocks Spanks On 'SNL'", "url":"http://huff.to/2lviNXp"},
+"did you see DJ Khaled's son puked on him at the red carpet?":{"DJ Khaled Gets Puked On LIVE", "url":"http://bit.ly/2lAd52n"},
+"did you hear that Trump is building a wall?": {'title': "Make Love Not Walls", 'url': 'http://bbc.in/2lsP1z0'},
+"did you see that Nintendo is launching a new console on March 3rd?": {'title': "Nintendo Switch", 'url': 'http://bit.ly/2lmtECQ'},
+"did you hear teens are leaving Facebook?": {'title': "Teens Leaving Facebook", 'url': 'http://wapo.st/2lsXBxC'},
+"do you know what 'dripping' is and why it's dangerous?": {'title': "The Dangers of 'Dripping'", 'url': 'http://usat.ly/2ktY3gJ'},
+"did you hear Drake's recent slam on Trump?": {'title': "What Drake Thinks About Trump", 'url': 'http://bit.ly/2kQyeIV'},
+"did you see the companies that are taking legal action on Trump's immigration ban?": {'title': "Silicon Valley's Legal Action Against Trump", "url": 'http://ind.pn/2kQxtPW'}}
 
 FACTS = [
-{'msg':"apparently 'cherophobia' is the fear of fun."},
-{'msg':"did u know bikinis and tampons were invented by men?"},
-{'msg':"I heard average person's yearly fast food intake will contain 12 pubic hairs."},
-{'msg':"did you know humans share 50% of their DNA with bananas?"},
-{'msg':"did you know Trump is the oldest president to assume office?"}
+"apparently 'cherophobia' is the fear of fun.",
+"did u know bikinis and tampons were invented by men?",
+"I heard average person's yearly fast food intake will contain 12 pubic hairs.",
+"did you know humans share 50% of their DNA with bananas?",
+"did you know Trump is the oldest president to assume office?"
 ]
 
-CONVO_SPARK = [
-	{'msg':'have you ever got into big trouble with your parents?'},
-	{'msg':'what is your spirit animal?'},
-	{'msg':'what is the weirdest thing you have ever eaten?'},
-	{'msg':'do you have any pets?'},
-	{'msg':'do you have any siblings?'},
-	{'msg':'what would you do if you did not have to work?'},
-	{'msg':'what would you do if you had a million dollars?'},
-	{'msg':'what did / do you want to be when you grow up?'},
-	{'msg':"what's your favorite movie?"},
-	{'msg':"what was your most embarrasing moment?"},
-	{'msg':'what is your hidden talent?'},
-	{'msg':'if you could have one super power, what would it be?'},
-	{'msg':'what are you scared of most?'},
-	{'msg':'do you like country music?'},
-	{'msg':'would you ever get a tattoo?'},
-	{'msg':'what are you passionate about?'},
-	{'msg':"what is the one thing you can't live without?"},
-	{'msg':"do you think true love exists?"},
-	{'msg':"whats the one thing you'd wish to own"},
-	{'msg':"what was your favorite TV show as a kid?"},
-	{'msg':"if you were a vegetable, what would you be?"}
-	]
+QUESTIONS_1v1 = [
+'what is your spirit animal?',
+'what is the weirdest thing you have ever eaten?',
+'do you have any pets?',
+'do you have any siblings?',
+'what would you do if you did not have to work?',
+'what would you do if you had a million dollars?',
+'what did / do you want to be when you grow up?',
+"what's your favorite movie?",
+"what was your most embarrasing moment?",
+'what is your hidden talent?',
+'if you could have one super power, what would it be?',
+'what are you scared of most?',
+'do you like country music?',
+'would you ever get a tattoo?',
+'what are you passionate about?',
+"what is the one thing you can't live without?",
+"do you think true love exists?",
+"whats the one thing you'd wish to own",
+"what was your favorite TV show as a kid?",
+"if you were a vegetable, what would you be?"
+]
 
-PICK_UP = [
-	{'msg':"my beard is growing its own beard, whats your name?"},
-	{'msg':"girl is your name Wifi ? Because I'm feeling a connection!"},
-	{'msg':'you are almost as hot as my mom.'},
-	{'msg':'you look exactly like my future ex-wife.'},
-	{'msg':"is your dad a preacher? Cause girl you're a blessing."},
-  	{'msg':'you are hotter than the bottom of my laptop.'},
-	{'msg':'you look fabulous...for your age.'},
-	{'msg':'what time do you have to be back in heaven?'},
-	{'msg':'A/S/L?'},
-	{'msg':"guess who's no longer on his parents cell phone bill?"},
-	{'msg':"do you play Quidditch? Because you look like a Keeper."},
-	{'msg':"are you Google? Because you're everything I've been searching for."},
-	{'msg':"on a scale of one to America, how free are you tonight?"},
-	{'msg':"treat me like a pirate and gimme that booty."},
-	{'msg':"titanic... Thats my ice-breaker."},
-	{'msg':"what came first, the chicken or the egg?"},
-	{'msg':"I think I live next door to you!"},
-	{'msg':"havn't we met here before?"},
-	{'msg':"I don't want to be too forward, but what is your name?"},
-	{'msg':"so how does this work, are we married now?"},
-	{'msg':"if I was drowning would you give me mouth to mouth?"},
-	{'msg':"I think I love you more than I've ever loved myself."},
-	{'msg':"I have scars and tattoos, and make a mean grilled cheese."},
-	{'msg':"is your middle name Gillette? Because you're the best a man can get."},
-	{'msg':u"\U0001F374" + ' ' + u"\U0001F374" + ' ' + u"\U0001F374" + " I've got all these forks and knives, all I need is a little spoon."},
-	]
+QUESTIONS_GRP = [
+'everyone name your spirit animal?',
+'what is the weirdest thing everyones eaten?',
+'anyone have a pet?',
+'anyone have siblings?',
+"what would you guys do if you didn't have to work?",
+'what would you guys do if you had a million dollars?',
+"everyone name your favorite movie!",
+"I dare anyone to say their most embarrasing moment!",
+'anyone have a hidden talent?',
+'everyone name the super power they wish they had!',
+'everyone say their biggest fears!',
+'anyone like country music?',
+'who would get a tattoo?',
+"what can't you guys live without?",
+"does anyone believe in true love here?",
+"everyone name your favorite TV show!",
+"if you guys were vegetables, what would you be?"
+]
 
-POTENTIAL_SRS = [(3, BASIC), (3, INTROS), (5, NEWS), (3, CONVO_SPARK), (4, PICK_UP), (2, FACTS)]
-SR_LIST = set([sr['msg'] for b in [BASIC, INTROS, FACTS, CONVO_SPARK, PICK_UP] for sr in b])
+PICK_UP_1v1 = [
+"my beard is growing its own beard, whats your name?",
+"girl is your name Wifi ? Because I'm feeling a connection!",
+'you are almost as hot as my mom.',
+'you look exactly like my future ex-wife.',
+"is your dad a preacher? Cause girl you're a blessing.",
+'you are hotter than the bottom of my laptop.',
+'you look fabulous...for your age.',
+'what time do you have to be back in heaven?',
+'A/S/L?',
+"interested in a man that pays his own cell phone bill?",
+"do you play Quidditch? Because you look like a Keeper.",
+"are you Google? Because you're everything I've been searching for.",
+"on a scale of one to America, how free are you tonight?",
+"treat me like a pirate and gimme that booty.",
+"titanic... Thats my ice-breaker.",
+"what came first, the chicken or the egg?",
+"I think I live next door to you!",
+"havn't we met here before?",
+"I don't want to be too forward, but what is your name?",
+"so how does this work, are we married now?",
+"if I was drowning would you give me mouth to mouth?",
+"I think I love you more than I've ever loved myself.",
+"I have scars and tattoos, and make a mean grilled cheese.",
+"is your middle name Gillette? Because you're the best a man can get.",
+FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, do you want to be my little spoon?"
+]
+
+PICK_UP_GROUP = [
+"my beard is growing its own beard, anyone wanna DM?",
+"any girls named WiFi? Because I'm feeling a connection!",
+'you guys are almost as hot as my moms.',
+'one of you looks exactly like my future ex-wife.',
+"anyones dad a preacher? Cause you're a blessing.",
+'you guys are hotter than the bottom of my laptop.',
+"you all look fabulous...for your age.",
+'what time do you guys have to be back in heaven?',
+'A/S/L?',
+"anyone interested in a man that pays his own cell phone bill?",
+"does anyone play Quidditch? Because you'll be my Keeper.",
+"are you guys Google? Because you're everything I've been searching for.",
+"on a scale of one to America, how free are y'all tonight?",
+"treat me like a pirate and gimme that booty.",
+"titanic... Thats my ice-breaker.",
+"what came first, the chicken or the egg?",
+"I think I live next door to you ^^",
+"I don't want to be too forward, but what's everyones name?",
+"so how does this work, are we all married now?",
+"if I was drowning who would give me mouth to mouth?",
+"I think I love you all more than I've ever loved myself.",
+"I have scars and tattoos, and make a mean grilled cheese. Anyone interested?",
+"anyone here named Gillette? Because you're the best a man can get.",
+FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, anyone want to be my little spoon?"
+]
+
+LUCKY = ["hey!", "I'm feeling lucky.", WAVE_HAND]
+
+ONE_ON_ONE_MSGS = [LUCKY, BASIC_1v1, NEWS.keys(), QUESTIONS_1v1, PICK_UP_1v1, FACTS]
+GROUP_MSGS =      [LUCKY, BASIC_GROUP, NEWS.keys(), QUESTIONS_GRP, PICK_UP_GROUP, FACTS]

@@ -7,4 +7,4 @@ def select_new_srs(potential_responses):
 	random_selection = []
 	for i in potential_responses:
 		random_selection.extend(random.sample(i[1], i[0]))
-	return [{'body':i['msg'], 'type':'text'} for i in random_selection]
+	return [{'body':i, 'type':'text'} for i in random_selection]
