@@ -5,11 +5,11 @@ import copy
 from kik.messages import SuggestedResponseKeyboard, TextMessage, LinkMessage
 
 from utils import select_random_srs
-from const import ONE_ON_ONE_MSGS, GROUP_MSGS, NEWS, LUCKY
+from const import ONE_ON_ONE_MSGS, GROUP_MSGS, NEWS, LUCKY, HELP_1v1, HELP_GROUP
 
 def dynamic_content_logic(message, body=None):
 
-	index_to_return_in_replies = [1, 3, 4, 5]
+	index_to_return_in_replies = [1, 3, 4]
 	
 	if len(set(message.participants)) > 2:
 		KEYBOARD_CONTENT = GROUP_MSGS
@@ -28,13 +28,13 @@ def handle_start_chatting(message):
     return [TextMessage(
         to=message.from_user,
         chat_id=message.chat_id,
-        body="'@hey' is a bot that doesn't interrupt you, it helps you start conversations."
+        body="I'm a bot that can help you start conversations."
     ),
         TextMessage(
             to=message.from_user,
             delay=500,
             chat_id=message.chat_id,
-            body="Type '@hey' to a friend or group!"
+            body="Don't know what to say? Just type @hey!"
         )]
 
 def basic_reply(message, body=None):
@@ -78,7 +78,7 @@ def handle_message(message):
 	if message.type == 'start-chatting':
 		reply = handle_start_chatting(message)
 		return reply, {"action_type": "start_chatting", 
-						"reply_data":[("reply_body", ','.join(r.body for r in reply)), ("reply_type", 'start-chatting')]}
+						"reply_data":[("reply_body", '|'.join(r.body for r in reply)), ("reply_type", 'start-chatting')]}
 
 	# Respond to empty request
 	if message.body in LUCKY + ['']:
@@ -92,15 +92,21 @@ def handle_message(message):
 		return reply, {"action_type": "news", 
 						"reply_data":[("reply_url", reply[0].url), ("reply_title", reply[0].title), ("reply_type", reply[0].type)]}
 	
-	# Don't reply if it's one of the baked in options
-	if message.mention and message.body in [msg for sublist in GROUP_MSGS + ONE_ON_ONE_MSGS for msg in sublist]:
-		reply = None
-		return reply, {"action_type": "news", 
-						"reply_data":[]}
+	# Respond to 1v1 help messages
+	if not message.mention:
+		reply = basic_reply(message, random.choice(HELP_1v1))
+		return reply, {"action_type": "help", 
+						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
 
-	# Fallback to help
+	# Don't reply if it's one of the baked in options
+	if message.body in [msg for sublist in GROUP_MSGS + ONE_ON_ONE_MSGS for msg in sublist]:
+			reply = None
+			return reply, {"action_type": "no_reply", 
+							"reply_data":[]}
+
 	else:
-		reply = basic_reply(message, "@hey doesn't always reply, try using it with a friend or group!")
+		# Group help
+		reply = basic_reply(message, random.choice(HELP_GROUP))
 		return reply, {"action_type": "help", 
 						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
 

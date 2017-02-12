@@ -40,10 +40,11 @@ def incoming():
 
     out_messages, extraData = handle_message(message)
 
-    try:
-        kik.send_messages(out_messages)
-    except Exception as e:
-        app.log.error("Message Error: {}".format(e))
+    if out_messages:
+        try:
+            kik.send_messages(out_messages)
+        except Exception as e:
+            app.log.error("Message Error: {}, Message {}".format(e, message.to_json()))
 
     try:
         print log_metric(message, extraData)
@@ -58,7 +59,7 @@ def incoming():
 
 
 def log_metric(in_message, extraData):
-    if in_message.type not in ('start-chatting', 'text'):
+    if in_message.type not in ('text'):
         in_message.body = None
     
     # Quick Metric Calcs (Happens After Message Send)

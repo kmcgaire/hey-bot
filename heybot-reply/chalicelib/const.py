@@ -35,18 +35,11 @@ NEWS = {
 "did you hear Drake's recent slam on Trump?": {'title': "What Drake Thinks About Trump", 'url': 'http://bit.ly/2kQyeIV'},
 "did you see the companies that are taking legal action on Trump's immigration ban?": {'title': "Silicon Valley's Legal Action Against Trump", "url": 'http://ind.pn/2kQxtPW'}}
 
-FACTS = [
-"apparently 'cherophobia' is the fear of fun.",
-"did u know bikinis and tampons were invented by men?",
-"I heard average person's yearly fast food intake will contain 12 pubic hairs.",
-"did you know humans share 50% of their DNA with bananas?",
-"did you know Trump is the oldest president to assume office?"
-]
 
 QUESTIONS_1v1 = [
 'what is your spirit animal?',
 'what is the weirdest thing you have ever eaten?',
-'do you have any pets?',
+'do you have any cute pets?',
 'do you have any siblings?',
 'what would you do if you did not have to work?',
 'what would you do if you had a million dollars?',
@@ -69,7 +62,7 @@ QUESTIONS_1v1 = [
 QUESTIONS_GRP = [
 'everyone name your spirit animal?',
 'what is the weirdest thing everyones eaten?',
-'anyone have a pet?',
+'anyone have a cute pet?',
 'anyone have siblings?',
 "what would you guys do if you didn't have to work?",
 'what would you guys do if you had a million dollars?',
@@ -143,5 +136,21 @@ FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, anyone w
 
 LUCKY = ["hey!", "I'm feeling lucky.", WAVE_HAND]
 
-ONE_ON_ONE_MSGS = [LUCKY, BASIC_1v1, NEWS.keys(), QUESTIONS_1v1, PICK_UP_1v1, FACTS]
-GROUP_MSGS =      [LUCKY, BASIC_GROUP, NEWS.keys(), QUESTIONS_GRP, PICK_UP_GROUP, FACTS]
+HELP_GROUP = ["I can't do all the talking here...", 
+			  "I'm just trying to help you guys out...",
+			  "How about you hit 'reply' and try those?",
+			  "Hit 'reply'... you'll thank me.",
+			  "Nah... Try something I've prepared for you instead.",
+			  "smh... Try again.",
+			  "Was that really what you meant to say?"]
+
+HELP_1v1 = ["'@hey' helps you get conversations started with friends. Type @hey in another chat.", 
+			"You know I'm not human right? Try typing @hey in a group.",
+			"I'm really not much of a talker. Type @hey to a friend instead!",
+			"See these suggestions? Try them in a group!",
+			"I'll keep responding, because I'm a robot.", 
+			"Beep Boop, type @hey in a group!",
+			"Tutorial complete: Try typing @hey in a group."]
+
+ONE_ON_ONE_MSGS = [LUCKY, BASIC_1v1, NEWS.keys(), QUESTIONS_1v1, PICK_UP_1v1]
+GROUP_MSGS =      [LUCKY, BASIC_GROUP, NEWS.keys(), QUESTIONS_GRP, PICK_UP_GROUP]

@@ -1,7 +1,7 @@
 import random
 from kik.messages import TextResponse
 
-ORDER_SAMPLE = [1, 5, 3, 5, 4, 2]
+ORDER_SAMPLE = [1, 5, 3, 6, 5]
 
 def select_random_srs(potential_responses):
 	'''

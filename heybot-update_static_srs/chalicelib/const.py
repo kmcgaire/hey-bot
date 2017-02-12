@@ -35,18 +35,10 @@ NEWS = {
 "did you hear Drake's recent slam on Trump?": {'title': "What Drake Thinks About Trump", 'url': 'http://bit.ly/2kQyeIV'},
 "did you see the companies that are taking legal action on Trump's immigration ban?": {'title': "Silicon Valley's Legal Action Against Trump", "url": 'http://ind.pn/2kQxtPW'}}
 
-FACTS = [
-"apparently 'cherophobia' is the fear of fun.",
-"did u know bikinis and tampons were invented by men?",
-"I heard average person's yearly fast food intake will contain 12 pubic hairs.",
-"did you know humans share 50% of their DNA with bananas?",
-"did you know Trump is the oldest president to assume office?"
-]
-
 QUESTIONS_1v1 = [
 'what is your spirit animal?',
 'what is the weirdest thing you have ever eaten?',
-'do you have any pets?',
+'do you have any cute pets?',
 'do you have any siblings?',
 'what would you do if you did not have to work?',
 'what would you do if you had a million dollars?',
@@ -69,7 +61,7 @@ QUESTIONS_1v1 = [
 QUESTIONS_GRP = [
 'everyone name your spirit animal?',
 'what is the weirdest thing everyones eaten?',
-'anyone have a pet?',
+'anyone have a cute pet?',
 'anyone have siblings?',
 "what would you guys do if you didn't have to work?",
 'what would you guys do if you had a million dollars?',
@@ -146,6 +138,6 @@ LUCKY = ["hey!", "I'm feeling lucky.", WAVE_HAND]
 POTENTIAL_SRS = [(1, LUCKY), 
 				(4, BASIC_1v1), (4, BASIC_GROUP),
 				(3, NEWS.keys()),
-			    (2, QUESTIONS_GRP),
-				(4, PICK_UP_GROUP), 
-				(2, FACTS)]
+			    (4, QUESTIONS_GRP),
+				(4, PICK_UP_GROUP)
+				]
