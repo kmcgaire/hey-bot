@@ -34,7 +34,7 @@ def handle_start_chatting(message):
             to=message.from_user,
             delay=500,
             chat_id=message.chat_id,
-            body="Type '@hey' to get help starting conversations."
+            body="Type '@hey' to a friend or group!"
         )]
 
 def basic_reply(message, body=None):
@@ -70,25 +70,37 @@ def link_reply(message, NEWS_DICT):
 def handle_message(message):
 	# Msgs other than text or welcome
 	if message.type not in ('start-chatting', 'text'):
-		return basic_reply(message, 'Thanks, but no thanks...')
+		reply = basic_reply(message, 'Thanks, but no thanks...')
+		return reply, {"action_type": "body_is_not_text", 
+						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
 
 	# Welcome Message
 	if message.type == 'start-chatting':
-		return handle_start_chatting(message)
+		reply = handle_start_chatting(message)
+		return reply, {"action_type": "start_chatting", 
+						"reply_data":[("reply_body", ','.join(r.body for r in reply)), ("reply_type", 'start-chatting')]}
 
 	# Respond to empty request
 	if message.body in LUCKY + ['']:
-		return basic_reply(message)
+		reply = basic_reply(message)
+		return reply, {"action_type": "feeling_lucky", 
+						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
 
     # Replies to News or SR's with Links
 	if message.body in NEWS.keys():
-		return link_reply(message, NEWS)
+		reply = link_reply(message, NEWS)
+		return reply, {"action_type": "news", 
+						"reply_data":[("reply_url", reply[0].url), ("reply_title", reply[0].title), ("reply_type", reply[0].type)]}
 	
 	# Don't reply if it's one of the baked in options
 	if message.mention and message.body in [msg for sublist in GROUP_MSGS + ONE_ON_ONE_MSGS for msg in sublist]:
-		return None
+		reply = None
+		return reply, {"action_type": "news", 
+						"reply_data":[]}
 
 	# Fallback to help
 	else:
-		return basic_reply(message, "@hey doesn't reply, it just helps start conversations!")
+		reply = basic_reply(message, "@hey doesn't always reply, try using it with a friend or group!")
+		return reply, {"action_type": "help", 
+						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
 

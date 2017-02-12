@@ -25,7 +25,10 @@ BASIC_GROUP = [
 "who else is watching Netflix rn?"
 ]
 
-NEWS = {"did you hear that Trump is building a wall?": {'title': "Make Love Not Walls", 'url': 'http://bbc.in/2lsP1z0'},
+NEWS = {
+"did you see Kristen Stewart Rocked Spanx as a sress on 'SNL'?":{'title':"Kristen Stewart Rocks Spanks On 'SNL'", "url":"http://huff.to/2lviNXp"},
+"did you see DJ Khaled's son puked on him at the red carpet?":{'title':"DJ Khaled Gets Puked On LIVE", "url":"http://bit.ly/2lAd52n"},
+"did you hear that Trump is building a wall?": {'title': "Make Love Not Walls", 'url': 'http://bbc.in/2lsP1z0'},
 "did you see that Nintendo is launching a new console on March 3rd?": {'title': "Nintendo Switch", 'url': 'http://bit.ly/2lmtECQ'},
 "did you hear teens are leaving Facebook?": {'title': "Teens Leaving Facebook", 'url': 'http://wapo.st/2lsXBxC'},
 "do you know what 'dripping' is and why it's dangerous?": {'title': "The Dangers of 'Dripping'", 'url': 'http://usat.ly/2ktY3gJ'},

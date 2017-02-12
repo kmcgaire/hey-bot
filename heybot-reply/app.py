@@ -1,18 +1,17 @@
 from kik.messages import *
 from kik import KikApi
-import logging
 from chalice import Chalice
 
+from collections import OrderedDict
 import requests
 import json
+import datetime
 
 from chalicelib import BOT_USERNAME, BOT_API_KEY
 from chalicelib import handle_message
 
 app = Chalice(app_name='heybot')
 app.debug = True
-app.log.setLevel(logging.INFO)
-
 
 kik = KikApi(BOT_USERNAME, BOT_API_KEY)
 
@@ -39,20 +38,44 @@ def incoming():
         app.log.info('Dropping message mentioning {}'.format(message.mention))
         return '', 200
 
-    app.log.info('Processing message: {}'.format(message.to_json()))
+    out_messages, extraData = handle_message(message)
 
-    outgoing_messages = handle_message(message)
+    try:
+        kik.send_messages(out_messages)
+    except Exception as e:
+        app.log.error("Message Error: {}".format(e))
 
-    if outgoing_messages:
-        app.log.info('Outgoing messages: {}'.format([m.to_json() for m in outgoing_messages]))
+    try:
+        print log_metric(message, extraData)
+    except Exception as e:
+        try:
+            print app.log.error("Custom Logging Failed! Error: {}, Message: {}, Response:{}, extraData:{}".format(e, message, out_messages, extraData))
+        except Exception as e:
+            print app.log.error("Something Really Went Wrong: {}".format(e))
+    
+    return '', 200
 
-    if outgoing_messages:
-        kik.send_messages(outgoing_messages)
-
-	return '', 200
 
 
-
+def log_metric(in_message, extraData):
+    if in_message.type not in ('start-chatting', 'text'):
+        in_message.body = None
+    
+    # Quick Metric Calcs (Happens After Message Send)
+    n_participants = len(set(in_message.participants))
+    # Mis classes 2 person groups
+    is_group = bool(n_participants > 2)
+    
+    return json.dumps(OrderedDict([("incoming_timestamp", in_message.timestamp),
+                                    ("user_jid", in_message.from_user),
+                                    ("incoming_type",in_message.type), 
+                                    ("action_type", extraData['action_type']),
+                                    ("is_mention", bool(in_message.mention)),
+                                    ("incoming_body", in_message.body),
+                                    ("reply_data", OrderedDict(extraData['reply_data'])),
+                                    ("is_grp", is_group),
+                                    ("n_participants", n_participants),
+                                    ("participants", in_message.participants)]))
 
 
 # metrics handler
