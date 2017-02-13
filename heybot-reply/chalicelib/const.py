@@ -15,6 +15,7 @@ BASIC_1v1 = ["how are you?",
 
 BASIC_GROUP = [
 "where are you guys from?",
+"I made a graph of how this conversation is going. " + GRAPH, 
 "anyone want to play truth or dare?",
 "is anyone here single?",
 "what have I missed?",
@@ -55,7 +56,7 @@ QUESTIONS_1v1 = [
 "what is the one thing you can't live without?",
 "do you think true love exists?",
 "whats the one thing you'd wish to own",
-"what was your favorite TV show as a kid?",
+"what's your fav TV show rn?",
 "if you were a vegetable, what would you be?"
 ]
 
@@ -63,28 +64,27 @@ QUESTIONS_GRP = [
 'everyone name your spirit animal?',
 'what is the weirdest thing everyones eaten?',
 'anyone have a cute pet?',
-'anyone have siblings?',
 "what would you guys do if you didn't have to work?",
 'what would you guys do if you had a million dollars?',
 "everyone name your favorite movie!",
 "I dare anyone to say their most embarrasing moment!",
-'anyone have a hidden talent?',
-'everyone name the super power they wish they had!',
-'everyone say their biggest fears!',
-'anyone like country music?',
+'can anyone here play an instrument?',
+'everyone name a super power they wish they had!',
+'everyone say their biggest fears, GO!',
+'anyone actually like country music?',
 'who would get a tattoo?',
 "what can't you guys live without?",
 "does anyone believe in true love here?",
-"everyone name your favorite TV show!",
+"everyone name your favorite TV show, GO!",
 "if you guys were vegetables, what would you be?"
 ]
 
 PICK_UP_1v1 = [
 "my beard is growing its own beard, whats your name?",
 "girl is your name Wifi ? Because I'm feeling a connection!",
-'you are almost as hot as my mom.',
+'you are almost as hot as your mom.',
 'you look exactly like my future ex-wife.',
-"is your dad a preacher? Cause girl you're a blessing.",
+"is your dad a preacher? Cause you're a blessing.",
 'you are hotter than the bottom of my laptop.',
 'you look fabulous...for your age.',
 'what time do you have to be back in heaven?',
@@ -109,8 +109,7 @@ FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, do you w
 
 PICK_UP_GROUP = [
 "my beard is growing its own beard, anyone wanna DM?",
-"any girls named WiFi? Because I'm feeling a connection!",
-'you guys are almost as hot as my moms.',
+"any one here named WiFi? Because I'm feeling a connection!",
 'one of you looks exactly like my future ex-wife.',
 "anyones dad a preacher? Cause you're a blessing.",
 'you guys are hotter than the bottom of my laptop.',
@@ -138,11 +137,18 @@ LUCKY = ["hey!", "I'm feeling lucky.", WAVE_HAND]
 
 HELP_GROUP = ["I can't do all the talking here...", 
 			  "I'm just trying to help you guys out...",
-			  "How about you hit 'reply' and try those?",
+			  "How about you hit 'reply' and try those instead?",
 			  "Hit 'reply'... you'll thank me.",
 			  "Nah... Try something I've prepared for you instead.",
 			  "smh... Try again.",
-			  "Was that really what you meant to say?"]
+			  "Was that really what you meant to say?",
+			  "Let's not and say we did...",
+			  "If I had a dollar for every time someone told me that...",
+			  "You are making me feel old...",
+			  "Sometimes, I just don't understand kids these days.",
+			  "You don't seem to understand what's happening here...",
+			  "I don't get paid enough for this.",
+			  ]
 
 HELP_1v1 = ["'@hey' helps you get conversations started with friends. Type @hey in another chat.", 
 			"You know I'm not human right? Try typing @hey in a group.",
@@ -150,7 +156,12 @@ HELP_1v1 = ["'@hey' helps you get conversations started with friends. Type @hey 
 			"See these suggestions? Try them in a group!",
 			"I'll keep responding, because I'm a robot. I don't actually like you...", 
 			"Beep Boop, type @hey in a group!",
-			"Tutorial complete: Try typing @hey in a group."]
+			"Tutorial complete: Try typing @hey in a group."
+			"Confusion Detected: Please try typing @hey in a group.",
+			"You realize it's just me and you in here right?",
+			"This is awkward, have I told you I'm a robot?",
+			"I don't get paid enough for this. You are supposed to type @ hey in a group!",
+			]
 
 ONE_ON_ONE_MSGS = [LUCKY, BASIC_1v1, NEWS.keys(), QUESTIONS_1v1, PICK_UP_1v1]
 GROUP_MSGS =      [LUCKY, BASIC_GROUP, NEWS.keys(), QUESTIONS_GRP, PICK_UP_GROUP]

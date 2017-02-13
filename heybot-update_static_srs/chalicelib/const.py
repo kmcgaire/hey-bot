@@ -15,6 +15,7 @@ BASIC_1v1 = ["how are you?",
 
 BASIC_GROUP = [
 "where are you guys from?",
+"I made a graph of how this conversation is going. " + GRAPH, 
 "anyone want to play truth or dare?",
 "is anyone here single?",
 "what have I missed?",
@@ -35,6 +36,7 @@ NEWS = {
 "did you hear Drake's recent slam on Trump?": {'title': "What Drake Thinks About Trump", 'url': 'http://bit.ly/2kQyeIV'},
 "did you see the companies that are taking legal action on Trump's immigration ban?": {'title': "Silicon Valley's Legal Action Against Trump", "url": 'http://ind.pn/2kQxtPW'}}
 
+
 QUESTIONS_1v1 = [
 'what is your spirit animal?',
 'what is the weirdest thing you have ever eaten?',
@@ -54,7 +56,7 @@ QUESTIONS_1v1 = [
 "what is the one thing you can't live without?",
 "do you think true love exists?",
 "whats the one thing you'd wish to own",
-"what was your favorite TV show as a kid?",
+"what's your fav TV show rn?",
 "if you were a vegetable, what would you be?"
 ]
 
@@ -62,28 +64,27 @@ QUESTIONS_GRP = [
 'everyone name your spirit animal?',
 'what is the weirdest thing everyones eaten?',
 'anyone have a cute pet?',
-'anyone have siblings?',
 "what would you guys do if you didn't have to work?",
 'what would you guys do if you had a million dollars?',
 "everyone name your favorite movie!",
 "I dare anyone to say their most embarrasing moment!",
-'anyone have a hidden talent?',
-'everyone name the super power they wish they had!',
-'everyone say their biggest fears!',
-'anyone like country music?',
+'can anyone here play an instrument?',
+'everyone name a super power they wish they had!',
+'everyone say their biggest fears, GO!',
+'anyone actually like country music?',
 'who would get a tattoo?',
 "what can't you guys live without?",
 "does anyone believe in true love here?",
-"everyone name your favorite TV show!",
+"everyone name your favorite TV show, GO!",
 "if you guys were vegetables, what would you be?"
 ]
 
 PICK_UP_1v1 = [
 "my beard is growing its own beard, whats your name?",
 "girl is your name Wifi ? Because I'm feeling a connection!",
-'you are almost as hot as my mom.',
+'you are almost as hot as your mom.',
 'you look exactly like my future ex-wife.',
-"is your dad a preacher? Cause girl you're a blessing.",
+"is your dad a preacher? Cause you're a blessing.",
 'you are hotter than the bottom of my laptop.',
 'you look fabulous...for your age.',
 'what time do you have to be back in heaven?',
@@ -108,8 +109,7 @@ FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, do you w
 
 PICK_UP_GROUP = [
 "my beard is growing its own beard, anyone wanna DM?",
-"any girls named WiFi? Because I'm feeling a connection!",
-'you guys are almost as hot as my moms.',
+"any one here named WiFi? Because I'm feeling a connection!",
 'one of you looks exactly like my future ex-wife.',
 "anyones dad a preacher? Cause you're a blessing.",
 'you guys are hotter than the bottom of my laptop.',
