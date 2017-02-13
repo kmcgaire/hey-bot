@@ -1,12 +1,22 @@
 FORK = u"\U0001F374" 
 GRAPH = u"\U0001F4C9"
 WAVE_HAND = u"\U0001F44B"
+SHAMROCK = u"\U0001F340"
+WINK =  u'\U0001F61C'
+EARTH = u"\U0001F30E"
+SLEEPY = u"\U0001F634"
+MUSIC = u"\U0001F3B6"
+PROFILE_PIC = u'\U0001F464'
+TURTLE = u"\U0001F422"
+ARROW_HEART = u'\U0001F498'
+MONEY_BAGS = u"\U0001F4B0"
+HEART = u"\u2764\uFE0F"
 
 BASIC_1v1 = ["how are you?",
-'I miss you.',
+'I miss you. ' + ARROW_HEART,
 "what are you up to?",
-"im bored...",
-"when's the last time I said I love you?", 
+"im bored... " + SLEEPY,
+"when's the last time I said I love you? " + HEART, 
 "when are you free?", 
 "want to video chat?", 
 'what are you doing this weekend?', 
@@ -14,20 +24,20 @@ BASIC_1v1 = ["how are you?",
 'knock knock, anyone here?']
 
 BASIC_GROUP = [
-"where are you guys from?",
+"where are you guys from? " + EARTH,
 "I made a graph of how this conversation is going. " + GRAPH, 
 "anyone want to play truth or dare?",
 "is anyone here single?",
 "what have I missed?",
-"what do you guys like to listen to?",
+MUSIC + " what do you guys like to listen to? " + MUSIC,
 "how old is everyone?",
-"who's lurking in here?",
-"is anyone here as bored as me?",
+"who's lurking in here? " + PROFILE_PIC,
+"is anyone here as bored as me? " + SLEEPY,
 "who else is watching Netflix rn?"
 ]
 
 NEWS = {
-"did you see Kristen Stewart Rocked Spanx as a sress on 'SNL'?":{'title':"Kristen Stewart Rocks Spanks On 'SNL'", "url":"http://huff.to/2lviNXp"},
+"did you see Kristen Stewart Rocked Spanx as a dress on 'SNL'?":{'title':"Kristen Stewart Rocks Spanks On 'SNL'", "url":"http://huff.to/2lviNXp"},
 "did you see DJ Khaled's son puked on him at the red carpet?":{'title':"DJ Khaled Gets Puked On LIVE", "url":"http://bit.ly/2lAd52n"},
 "did you hear that Trump is building a wall?": {'title': "Make Love Not Walls", 'url': 'http://bbc.in/2lsP1z0'},
 "did you see that Nintendo is launching a new console on March 3rd?": {'title': "Nintendo Switch", 'url': 'http://bit.ly/2lmtECQ'},
@@ -40,10 +50,10 @@ NEWS = {
 QUESTIONS_1v1 = [
 'what is your spirit animal?',
 'what is the weirdest thing you have ever eaten?',
-'do you have any cute pets?',
+'do you have any cute pets? ' + TURTLE,
 'do you have any siblings?',
 'what would you do if you did not have to work?',
-'what would you do if you had a million dollars?',
+'what would you do if you had a million dollars? ' + MONEY_BAGS,
 'what did / do you want to be when you grow up?',
 "what's your favorite movie?",
 "what was your most embarrasing moment?",
@@ -63,9 +73,9 @@ QUESTIONS_1v1 = [
 QUESTIONS_GRP = [
 'everyone name your spirit animal?',
 'what is the weirdest thing everyones eaten?',
-'anyone have a cute pet?',
+'anyone have a cute pet? ' + TURTLE,
 "what would you guys do if you didn't have to work?",
-'what would you guys do if you had a million dollars?',
+'what would you guys do if you had a million dollars? ' + MONEY_BAGS,
 "everyone name your favorite movie!",
 "I dare anyone to say their most embarrasing moment!",
 'can anyone here play an instrument?',
@@ -80,12 +90,12 @@ QUESTIONS_GRP = [
 ]
 
 PICK_UP_1v1 = [
-"my beard is growing its own beard, whats your name?",
+"my beard is growing its own beard, whats your name? " + WINK,
 "girl is your name Wifi ? Because I'm feeling a connection!",
-'you are almost as hot as your mom.',
+'you are almost as hot as your mom. ' + WINK,
 'you look exactly like my future ex-wife.',
 "is your dad a preacher? Cause you're a blessing.",
-'you are hotter than the bottom of my laptop.',
+'you are hotter than the bottom of my laptop. ' + WINK,
 'you look fabulous...for your age.',
 'what time do you have to be back in heaven?',
 'A/S/L?',
@@ -100,7 +110,7 @@ PICK_UP_1v1 = [
 "havn't we met here before?",
 "I don't want to be too forward, but what is your name?",
 "so how does this work, are we married now?",
-"if I was drowning would you give me mouth to mouth?",
+"if I was drowning would you give me mouth to mouth? " + WINK,
 "I think I love you more than I've ever loved myself.",
 "I have scars and tattoos, and make a mean grilled cheese.",
 "is your middle name Gillette? Because you're the best a man can get.",
@@ -108,12 +118,12 @@ FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, do you w
 ]
 
 PICK_UP_GROUP = [
-"my beard is growing its own beard, anyone wanna DM?",
+"my beard is growing its own beard, anyone wanna DM? " + WINK,
 "any one here named WiFi? Because I'm feeling a connection!",
 'one of you looks exactly like my future ex-wife.',
 "anyones dad a preacher? Cause you're a blessing.",
 'you guys are hotter than the bottom of my laptop.',
-"you all look fabulous...for your age.",
+"you all look fabulous...for your age. " + WINK,
 'what time do you guys have to be back in heaven?',
 'A/S/L?',
 "anyone interested in a man that pays his own cell phone bill?",
@@ -126,14 +136,14 @@ PICK_UP_GROUP = [
 "I think I live next door to you ^^",
 "I don't want to be too forward, but what's everyones name?",
 "so how does this work, are we all married now?",
-"if I was drowning who would give me mouth to mouth?",
+"if I was drowning who would give me mouth to mouth?. " + WINK,
 "I think I love you all more than I've ever loved myself.",
 "I have scars and tattoos, and make a mean grilled cheese. Anyone interested?",
 "anyone here named Gillette? Because you're the best a man can get.",
 FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, anyone want to be my little spoon?"
 ]
 
-LUCKY = ["hey!", "I'm feeling lucky.", WAVE_HAND]
+LUCKY = ["hey!", "I'm feeling lucky " + SHAMROCK, WAVE_HAND]
 
 HELP_GROUP = ["I can't do all the talking here...", 
 			  "I'm just trying to help you guys out...",
@@ -150,17 +160,17 @@ HELP_GROUP = ["I can't do all the talking here...",
 			  "I don't get paid enough for this.",
 			  ]
 
-HELP_1v1 = ["'@hey' helps you get conversations started with friends. Type @hey in another chat.", 
+HELP_1v1 = ["@hey helps you get conversations started with friends. Type @hey in another chat.", 
 			"You know I'm not human right? Try typing @hey in a group.",
 			"I'm really not much of a talker. Type @hey to a friend instead!",
 			"See these suggestions? Try them in a group!",
 			"I'll keep responding, because I'm a robot. I don't actually like you...", 
 			"Beep Boop, type @hey in a group!",
-			"Tutorial complete: Try typing @hey in a group."
+			"Tutorial complete: Try typing @hey in a group.",
 			"Confusion Detected: Please try typing @hey in a group.",
 			"You realize it's just me and you in here right?",
 			"This is awkward, have I told you I'm a robot?",
-			"I don't get paid enough for this. You are supposed to type @ hey in a group!",
+			"I don't get paid enough for this. You are supposed to type @hey in a group!",
 			]
 
 ONE_ON_ONE_MSGS = [LUCKY, BASIC_1v1, NEWS.keys(), QUESTIONS_1v1, PICK_UP_1v1]
