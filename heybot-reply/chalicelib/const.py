@@ -148,7 +148,7 @@ HELP_1v1 = ["'@hey' helps you get conversations started with friends. Type @hey 
 			"You know I'm not human right? Try typing @hey in a group.",
 			"I'm really not much of a talker. Type @hey to a friend instead!",
 			"See these suggestions? Try them in a group!",
-			"I'll keep responding, because I'm a robot.", 
+			"I'll keep responding, because I'm a robot. I don't actually like you...", 
 			"Beep Boop, type @hey in a group!",
 			"Tutorial complete: Try typing @hey in a group."]
 
