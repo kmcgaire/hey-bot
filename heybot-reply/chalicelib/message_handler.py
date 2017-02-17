@@ -5,7 +5,13 @@ import copy
 from kik.messages import SuggestedResponseKeyboard, TextMessage, LinkMessage
 
 from utils import select_random_srs
-from const import ONE_ON_ONE_MSGS, GROUP_MSGS, NEWS, LUCKY, HELP_1v1, HELP_GROUP
+from const import ONE_ON_ONE_MSGS, GROUP_MSGS, NEWS, LUCKY, HELP_1v1, HELP_GROUP, HEART
+
+# Hey Fork with categories instead of specifics
+
+# @hey pickup lines
+# @hey conversation starters
+# @hey 
 
 def dynamic_content_logic(message, body=None):
 
@@ -28,13 +34,19 @@ def handle_start_chatting(message):
     return [TextMessage(
         to=message.from_user,
         chat_id=message.chat_id,
-        body="I'm a bot that can help you start conversations."
+        body="I'm a bot that gives you ideas to help start conversations."
     ),
         TextMessage(
             to=message.from_user,
             delay=500,
             chat_id=message.chat_id,
             body="Don't know what to say? Just type @hey!"
+        ),
+        TextMessage(
+            to=message.from_user,
+            delay=500,
+            chat_id=message.chat_id,
+            body="FYI, I won't always reply. I'm just here to give you ideas. " + HEART
         )]
 
 def basic_reply(message, body=None):
@@ -70,7 +82,7 @@ def link_reply(message, NEWS_DICT):
 def handle_message(message):
 	# Msgs other than text or welcome
 	if message.type not in ('start-chatting', 'text'):
-		reply = basic_reply(message, 'Thanks, but no thanks...')
+		reply = basic_reply(message, 'That is quite lovely, but I only respond to text.')
 		return reply, {"action_type": "body_is_not_text", 
 						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
 
@@ -103,7 +115,6 @@ def handle_message(message):
 			reply = None
 			return reply, {"action_type": "no_reply", 
 							"reply_data":[]}
-
 	else:
 		# Group help
 		reply = basic_reply(message, random.choice(HELP_GROUP))
