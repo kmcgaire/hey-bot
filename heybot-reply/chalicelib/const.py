@@ -155,7 +155,7 @@ FLIRT_GROUP = [
     FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, anyone want to be my little spoon?"
 ]
 
-HEY = ["Hey", "Random", WAVE_HAND]
+HEY = ["Hey", "Random", WAVE_HAND, "Surprise me"]
 
 HELP_GROUP = ["I can't do all the talking here...",
               "I'm just trying to help you guys out...",
@@ -222,11 +222,14 @@ WOULD_YOU_RATHER = ["Lose your money OR all of your photos?",
 TRUTH_OR_DARE = ["I'll go first. I Dare {} to emoji Kiss {}",
                  "I dare {} to do their homework for once.",
                  "I dare {} to text {} a dark secret",
+                 "I dare {} to text me a dark secret",
                  "I dare {} to go on video chat.",
                  "I dare {} to eat a banana with the skin on.",
-                 "I date {} to pick their nose on video.",
+                 "I dare {} to pick their nose on video.",
                  "I dare {} to post the first pic from their gallery.",
+                 "I dare everyone to post the first pic from their gallery.",
                  "I dare {} to post the most recent pic from their gallery.",
+                 "I dare everyone to post the most recent pic from their gallery."
 
                  # Truths
                  "Me first, {}, when's the last time you pooped?",
@@ -257,6 +260,26 @@ UNSCRAMBLE = []
 CATEGORIES = []
 RHYME_TIME = []
 EMOJI_STORY = []
+
+
+NAMES = [
+    "Rachael Ray",
+    "Batman",
+    "Oprah",
+    "Justin B",
+    "Kim K",
+    "R Kelly",
+    "James Bond",
+    "Ant Man",
+    "Dora the Explorer",
+    "John Cena",
+    "Ron Weasley",
+    "Kanye",
+    "Drake",
+    "Kylie J",
+    "your Mom",
+    "your teacher"
+  ]
 
 UNKNOWN = ["Aww, you are so cute. Use your words next time."]
 

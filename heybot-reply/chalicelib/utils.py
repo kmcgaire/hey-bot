@@ -1,6 +1,7 @@
 import random
 import json
 import re
+import copy
 from collections import OrderedDict
 
 from kik.messages import TextResponse
@@ -25,13 +26,19 @@ def build_keyboard(HEY_OPTIONS, extraResponses = False):
 
 def sub_in_users(message, body):
     n_subs = len(re.findall('{}', body))
+
+    participants = copy.deepcopy(message.participants)
     # Don't do more work then you have to
     if n_subs == 0:
         return body
 
-    users = ['@'+user for user in message.participants]
-    sub_users = [random.choice(users) for _ in xrange(n_subs)]
-    # sub_users = random.sample(users, n_subs)
+    users = ['@'+user for user in participants]
+
+    if n_subs > len(users):
+        users += ['@Roll', '@kikteam']
+        print users
+
+    sub_users = random.sample(users, n_subs)
 
     return body.format(*sub_users)
 
