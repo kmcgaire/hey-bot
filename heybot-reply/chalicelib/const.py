@@ -12,7 +12,7 @@ ARROW_HEART = u'\U0001F498'
 MONEY_BAGS = u"\U0001F4B0"
 HEART = u"\u2764\uFE0F"
 
-BASIC_1v1 = ["how are you?",
+SMALL_TALK_1v1 = ["how are you?",
 'I miss you. ' + ARROW_HEART,
 "what are you up to?",
 "im bored... " + SLEEPY,
@@ -23,7 +23,7 @@ BASIC_1v1 = ["how are you?",
 "I made a graph of how this conversation is going. " + GRAPH, 
 'knock knock, anyone here?']
 
-BASIC_GROUP = [
+SMALL_TALK_GROUP = [
 "where are you guys from? " + EARTH,
 "I made a graph of how this conversation is going. " + GRAPH, 
 "anyone want to play truth or dare?",
@@ -70,7 +70,7 @@ QUESTIONS_1v1 = [
 "if you were a vegetable, what would you be?"
 ]
 
-QUESTIONS_GRP = [
+QUESTIONS_GROUP = [
 'everyone name your spirit animal?',
 'what is the weirdest thing everyones eaten?',
 'anyone have a cute pet? ' + TURTLE,
@@ -89,7 +89,7 @@ QUESTIONS_GRP = [
 "if you guys were vegetables, what would you be?"
 ]
 
-PICK_UP_1v1 = [
+FLIRT_1v1 = [
 "my beard is growing its own beard, whats your name? " + WINK,
 "girl is your name Wifi ? Because I'm feeling a connection!",
 'you are almost as hot as your mom. ' + WINK,
@@ -117,7 +117,7 @@ PICK_UP_1v1 = [
 FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, do you want to be my little spoon?"
 ]
 
-PICK_UP_GROUP = [
+FLIRT_GROUP = [
 "my beard is growing its own beard, anyone wanna DM? " + WINK,
 "any one here named WiFi? Because I'm feeling a connection!",
 'one of you looks exactly like my future ex-wife.',
@@ -143,7 +143,7 @@ PICK_UP_GROUP = [
 FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, anyone want to be my little spoon?"
 ]
 
-LUCKY = ["hey!", "I'm feeling lucky " + SHAMROCK, WAVE_HAND]
+HEY = ["hey!", "I'm feeling lucky " + SHAMROCK, WAVE_HAND]
 
 HELP_GROUP = ["I can't do all the talking here...", 
 			  "I'm just trying to help you guys out...",
@@ -173,5 +173,17 @@ HELP_1v1 = ["@hey helps you get conversations started with friends. Type @hey in
 			"I don't get paid enough for this. You are supposed to type @hey in a group!",
 			]
 
-ONE_ON_ONE_MSGS = [LUCKY, BASIC_1v1, NEWS.keys(), QUESTIONS_1v1, PICK_UP_1v1]
-GROUP_MSGS =      [LUCKY, BASIC_GROUP, NEWS.keys(), QUESTIONS_GRP, PICK_UP_GROUP]
+START_CHATTING = [["I'm a bot that gives you ideas to help start conversations.", 
+					"Don't know what to say? Just type @hey!"]]
+
+CONTENT = {
+    "Unknown":{"group":UNKNOWN_GROUP, "1v1":UNKNOWN_1v1},
+    "Subscribe":{'1v1':START_CHATTING},
+
+    "Hey":{"group":SMALL_TALK_GROUP+QUESTION_GROUP, '1v1':SMALL_TALK_1v1+QUESTION_1v1}
+	"News":{"group":NEWS, '1v1':NEWS},
+	"Small Talk":{"group":SMALL_TALK_GROUP, '1v1':SMALL_TALK_1v1},
+	"Flirt":{"group":FLIRT_GROUP, '1v1':FLIRT_1v1},
+	"Questions":{"group":QUESTION_GROUP, '1v1':QUESTION_1v1},
+	"Help":{"group":HELP_GROUP, '1v1':HELP_1v1}
+}
