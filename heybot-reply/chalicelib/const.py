@@ -49,7 +49,14 @@ NEWS = [
     {'title': "20 Things You Didn't Know About Ivanka Trump", "url": "http://bit.ly/2lU7Gaz"},
     {'title': "Who is the 'Riverdale' Murderer?", "url": "http://bzfd.it/2m5F2iM"},
     {'title': "What's New On Neflix?", "url": "http://bit.ly/2lg8cMO"},
-    {'title': "23 of the Least Supportive Parents", "url": "http://bzfd.it/2ky7gWZ"}
+    {'title': "23 of the Least Supportive Parents", "url": "http://bzfd.it/2ky7gWZ"},
+    {'title': "20 Cute Kittens. Just Because...", "url": "http://bzfd.it/2lg9Lu4"},
+    {'title': "Gordon Ramsay Roasting People On Twitter", "url": "http://bzfd.it/2m5XBmM"},
+    {'title': "Someone Isolated Lady GaGa's SuperBowl Performance", "url": "http://bzfd.it/2kyj6QP"},
+    {'title': "France is Training Eagles to Fight Drones", "url": "http://bzfd.it/2ltvZLP"},
+    {'title': "Check Out This Amazing West World Fan Art", "url": "http://bzfd.it/2m68DIY"},
+    {'title': "Gambino Is Voicing Simba in Lion King Remake", "url": "http://bit.ly/2l3TJ8m"},
+    {'title': "Samsung's Chief is in Jail", "url": "http://read.bi/2kIgT0l"}
 ]
 
 QUESTIONS_1v1 = [
@@ -70,7 +77,7 @@ QUESTIONS_1v1 = [
     'what are you passionate about?',
     "what is the one thing you can't live without?",
     "do you think true love exists?",
-    "whats the one thing you'd wish to own",
+    "whats the one thing you'd wish to own?",
     "what's your fav TV show rn?",
     "if you were a vegetable, what would you be?"
 ]
@@ -180,7 +187,7 @@ HELP_1v1 = ["@hey helps you get conversations started with friends. Type @hey in
 
 UNKNOWN = ["Aww, you are so cute. Use your words next time."]
 
-START_CHATTING = [["I'm a bot that gives you ideas to help start conversations.",
+START_CHATTING = [["I'm a bot that helps start conversations.",
                    "Don't know what to say? Just type @hey!"]]
 
 CONTENT = {

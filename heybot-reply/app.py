@@ -46,8 +46,7 @@ def incoming():
         try:
             kik.send_messages(out_messages)
         except Exception as e:
-            app.log.error("Message Handler Error: {}, Message {}, Response {}".format(e, message.to_json()),
-                          out_messages)
+            app.log.error("Message Handler Error: {}, Message {}, Response {}".format(e, message.to_json(), out_messages[0].to_json()))
 
     try:
         print log_metric(message, out_messages, event)
