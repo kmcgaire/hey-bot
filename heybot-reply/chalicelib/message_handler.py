@@ -4,70 +4,50 @@ import copy
 
 from kik.messages import SuggestedResponseKeyboard, TextMessage, LinkMessage
 
-from utils import select_random_srs
-from const import ONE_ON_ONE_MSGS, GROUP_MSGS, NEWS, LUCKY, HELP_1v1, HELP_GROUP, HEART
+from utils import conversation_type, build_keyboard
+from const import HEY, CONTENT
 
 # Hey Fork with categories instead of specifics
 
-# @hey pickup lines
-# @hey conversation starters
-# @hey 
+# @hey random
+# @hey small talk
+# @hey news
+# @hey flirt
+# @hey facts
+# @hey games
 
-def dynamic_content_logic(message, body=None):
+def start_chatting_reply(message, BODY):
 
-	index_to_return_in_replies = [1, 3, 4]
-	
-	if len(set(message.participants)) > 2:
-		KEYBOARD_CONTENT = GROUP_MSGS
-	else:
-		KEYBOARD_CONTENT = ONE_ON_ONE_MSGS
-
-	if body is None:
-		CLEANED_BODY_OPTIONS = [KEYBOARD_CONTENT[i] for i in index_to_return_in_replies]
-		BODY = random.choice(random.choice(CLEANED_BODY_OPTIONS))
-	else:
-		BODY = body
-
-	return BODY, KEYBOARD_CONTENT
-
-def handle_start_chatting(message):
     return [TextMessage(
         to=message.from_user,
         chat_id=message.chat_id,
-        body="I'm a bot that gives you ideas to help start conversations."
+        body=BODY[0]
     ),
         TextMessage(
             to=message.from_user,
             delay=500,
             chat_id=message.chat_id,
-            body="Don't know what to say? Just type @hey!"
-        ),
-        TextMessage(
-            to=message.from_user,
-            delay=500,
-            chat_id=message.chat_id,
-            body="FYI, I won't always reply. I'm just here to give you ideas. " + HEART
+            body=BODY[1],
+            keyboards=[SuggestedResponseKeyboard(
+            	responses=build_keyboard()
+        )]
         )]
 
-def basic_reply(message, body=None):
-
-	BODY, KEYBOARD_CONTENT = dynamic_content_logic(message, body)
+def text_reply(message, BODY):
 
 	return [TextMessage(
         to=message.from_user,
         chat_id=message.chat_id,
         body=BODY, 
         keyboards=[SuggestedResponseKeyboard(
-            responses=select_random_srs(KEYBOARD_CONTENT)
+            responses=build_keyboard()
         )]
     )]
 
-def link_reply(message, NEWS_DICT):
+def link_reply(message, BODY):
 
-	url   = NEWS_DICT[message.body]['url']
-	title = NEWS_DICT[message.body]['title']
-
-	BODY, KEYBOARD_CONTENT = dynamic_content_logic(message)
+	url   = BODY['url']
+	title = BODY['title']
 
 	return [LinkMessage(
 	    to=message.from_user,
@@ -75,9 +55,40 @@ def link_reply(message, NEWS_DICT):
 	    url=url,
 	    title=title,
 	    keyboards=[SuggestedResponseKeyboard(
-	        responses=select_random_srs(KEYBOARD_CONTENT)
+	        responses=build_keyboard()
 	    )]
 	)]
+
+def handle_message(message):
+
+	CONVO_TYPE = conversation_type(message)
+
+	# Determine key needed for reply
+	event = message.body
+
+	if message.type not in ('start-chatting', 'text'):
+		event = 'Unknown'
+	
+	if message.type == 'start-chatting':
+		event = 'Subscribe'
+	
+	if message.body in HEY_OPTIONS:
+		event = 'Hey'
+	
+	try:
+		BODY = random.choice(CONTENT[event[CONVO_TYPE]])
+	except Exception as e:
+		event = 'Help'
+		BODY = random.choice(CONTENT[event[CONVO_TYPE]])
+
+
+	if event == "News":
+		return link_reply(BODY)
+	if event == "Subscribe":
+		return start_chatting_reply()
+	else:
+		return text_reply(BODY)
+
 
 def handle_message(message):
 	# Msgs other than text or welcome
@@ -97,6 +108,9 @@ def handle_message(message):
 		reply = basic_reply(message)
 		return reply, {"action_type": "feeling_lucky", 
 						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
+
+	if mention:
+		main_reply(message)
 
     # Replies to News or SR's with Links
 	if message.body in NEWS.keys():
