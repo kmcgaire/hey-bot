@@ -52,7 +52,7 @@ NEWS = [
     {'title': "23 of the Least Supportive Parents", "url": "http://bzfd.it/2ky7gWZ"},
     {'title': "20 Cute Kittens. Just Because...", "url": "http://bzfd.it/2lg9Lu4"},
     {'title': "Gordon Ramsay Roasting People On Twitter", "url": "http://bzfd.it/2m5XBmM"},
-    {'title': "Someone Isolated Lady GaGa's SuperBowl Performance", "url": "http://bzfd.it/2kyj6QP"},
+    {'title': "Lady GaGa's SuperBowl Vocals Are Amazing", "url": "http://bzfd.it/2kyj6QP"},
     {'title': "France is Training Eagles to Fight Drones", "url": "http://bzfd.it/2ltvZLP"},
     {'title': "Check Out This Amazing West World Fan Art", "url": "http://bzfd.it/2m68DIY"},
     {'title': "Gambino Is Voicing Simba in Lion King Remake", "url": "http://bit.ly/2l3TJ8m"},
@@ -176,14 +176,87 @@ HELP_1v1 = ["@hey helps you get conversations started with friends. Type @hey in
             "You know I'm not human right? Try typing @hey in a group.",
             "I'm really not much of a talker. Type @hey to a friend instead!",
             "See these suggestions? Try them in a group!",
-            "I'll keep responding, because I'm a robot. I don't actually like you...",
+            # "I'll keep responding, because I'm a robot. I don't actually like you...",
             "Beep Boop, type @hey in a group!",
             "Tutorial complete: Try typing @hey in a group.",
             "Confusion Detected: Please try typing @hey in a group.",
-            "You realize it's just me and you in here right?",
+            "You realize it's just me and you in here right? Type @hey in a group.",
             "This is awkward, have I told you I'm a robot?",
             "I don't get paid enough for this. You are supposed to type @hey in a group!",
             ]
+
+FACTS = ["Comets were observed and recorded as early as 239 BC by Chinese astronomers.",
+         "Chocolate can prevent against tooth decay",
+         "67% of public toilet users don't wash their hands.",
+         "Prairie dogs say hello with kisses.",
+         "Slumber Party Barbie came with a book called 'How to Lose Weight.' One of the tips was 'Don't eat.'",
+         "Shaking or waving can actually damage a Polroid picture.",
+         "{} is hot.",
+         "Calvin Klein's cologne is used by researchers to attract wild animals to cameras.",
+         "Dog's feet often smell of corn chips.",
+         "Beaver College changed it's name to 'Arcadia' because anti-porn filters blocked access to the school's website.",
+         "In Spain, Mr. Clean is known as Don Limpio."]
+
+# GAMES
+WOULD_YOU_RATHER = ["Lose your money OR all of your photos?",
+                    "Go to jail for 5 years for something you didn't do OR Walk free and live in fear of being caught?",
+                    "Netflix or Chill?",
+                    "Get $1000 OR a kiss from {}?",
+                    "{} or {}?",
+                    "{}'s eyes or {}'s hair?",
+                    "1$ or {}'s friendship?",
+                    "Live in a perfect virtual reality OR the real world?",
+                    "Give up Neflix OR texting?",
+                    "Be able to fly OR Always be invisible.",
+                    "Be poor but help people OR be rich and hurt people?",
+                    "Would you rather find true love OR 1 Million dollars?",
+                    "Be transported 500 years into the past OR the future?",
+                    "Be able to control fire OR control water?",
+                    "Have unlimited sushi OR unlimited tacos?",
+                    "Give up bathing OR give up the internet for a month?"
+                    "Be married to a 10/10 psycho OR a 5/10 with great personality?",
+                    "Be constantly tired OR constantly hungry?",
+                    "Be an amazing painter or a brilliant mathematician?",
+                    "Would you rather have a get out of jail free card OR a key that opens any door?"]
+
+TRUTH_OR_DARE = ["I'll go first. I Dare {} to emoji Kiss {}",
+                 "I dare {} to do their homework for once.",
+                 "I dare {} to text {} a dark secret",
+                 "I dare {} to go on video chat.",
+                 "I dare {} to eat a banana with the skin on.",
+                 "I date {} to pick their nose on video.",
+                 "I dare {} to post the first pic from their gallery.",
+                 "I dare {} to post the most recent pic from their gallery.",
+
+                 # Truths
+                 "Me first, {}, when's the last time you pooped?",
+                 "Would {} swipe-right {}?",
+                 "Would {} swipe-left {}?",
+                 "{}, do you have a crush on {}?",
+                 "{}, what qualities do you want in a spouse?",
+                 "{}, what's your fav chick flick?",
+                 "{}, have you ever skinny dipped?",
+                 "{}, what is the stupidest thing you've done?",
+                 "{}, what was the last lie you told?",
+                 "{}, have you ever cheated on someone?",
+                 "{}, have you ever went for a run, then ate a pizza right after?",
+                 "{}, would you mind being the opposite sex for a day?",
+                 "{}, ever had a crush on a teacher?",
+                 "{}, ever had a crush on a {}?",
+                 "{}, ever had a crush on a anyone in this chat?",
+                 "{}, ever had a one-night stand?",
+                 "{}, have you ever stole something?",
+                 "{}, whats your favorite feature about the opposite sex?"
+                 "{}, whats your favorite feature about {}?"
+                 ]
+
+FRIENDSHIP_TEST = ["When did I have my first kiss?"]
+UNSCRAMBLE = []
+
+
+CATEGORIES = []
+RHYME_TIME = []
+EMOJI_STORY = []
 
 UNKNOWN = ["Aww, you are so cute. Use your words next time."]
 
@@ -199,5 +272,8 @@ CONTENT = {
     "Small Talk": {"group": SMALL_TALK_GROUP, '1v1': SMALL_TALK_1v1},
     "Flirt": {"group": FLIRT_GROUP, '1v1': FLIRT_1v1},
     "Questions": {"group": QUESTIONS_GROUP, '1v1': QUESTIONS_1v1},
+    "Would you rather?": {'group': WOULD_YOU_RATHER, '1v1': WOULD_YOU_RATHER},
+    "Truth or Dare": {'group': TRUTH_OR_DARE, '1v1': TRUTH_OR_DARE},
+    "Facts": {'group': FACTS, '1v1': FACTS},
     "Help": {"group": HELP_GROUP, '1v1': HELP_1v1}
 }

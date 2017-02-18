@@ -1,5 +1,6 @@
 import random
 import json
+import re
 from collections import OrderedDict
 
 from kik.messages import TextResponse
@@ -12,23 +13,40 @@ def conversation_type(message):
         return '1v1'
 
 
-def build_keyboard(HEY_OPTIONS):
+def build_keyboard(HEY_OPTIONS, extraResponses = False):
     HEY = random.choice(HEY_OPTIONS)
-    RESPONSES = [HEY, "Small Talk", "Flirt", "Questions", "News"]
+    RESPONSES = [HEY, "Small Talk", "Flirt", "Questions", "News", "Truth or Dare", "Would you rather?", "Facts"]
+
+    if extraResponses:
+        RESPONSES += extraResponses
+
     return [TextResponse(r) for r in RESPONSES]
+
+
+def sub_in_users(message, body):
+    n_subs = len(re.findall('{}', body))
+    # Don't do more work then you have to
+    if n_subs == 0:
+        return body
+
+    users = ['@'+user for user in message.participants]
+    sub_users = [random.choice(users) for _ in xrange(n_subs)]
+    # sub_users = random.sample(users, n_subs)
+
+    return body.format(*sub_users)
 
 
 # Logging Helpers
 def buildExtraData(reply, event_name):
     extraData = {"event_name": event_name}
 
-    TYPE = reply[0].type
+    msg_type = reply[0].type
     if event_name == "News":
-        REPLY_DATA = [("title", reply[0].title), ('url', reply[0].url), ("reply_type", TYPE)]
+        reply_data = [("title", reply[0].title), ('url', reply[0].url), ("reply_type", msg_type)]
     else:
-        REPLY_DATA = [("reply_body", reply[0].body), ("reply_type", TYPE)]
+        reply_data = [("reply_body", reply[0].body), ("reply_type", msg_type)]
 
-    extraData["reply_data"] = REPLY_DATA
+    extraData["reply_data"] = reply_data
 
     return extraData
 

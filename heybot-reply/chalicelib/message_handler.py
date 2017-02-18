@@ -2,11 +2,11 @@ import random
 
 from kik.messages import SuggestedResponseKeyboard, TextMessage, LinkMessage
 
-from utils import conversation_type, build_keyboard
+from utils import conversation_type, build_keyboard, sub_in_users
 from const import HEY, CONTENT
 
 
-def start_chatting_reply(message, body):
+def start_chatting_reply(message, body, response_list):
     return [TextMessage(
         to=message.from_user,
         chat_id=message.chat_id,
@@ -18,23 +18,26 @@ def start_chatting_reply(message, body):
             chat_id=message.chat_id,
             body=body[1],
             keyboards=[SuggestedResponseKeyboard(
-                responses=build_keyboard(HEY)
+                responses=response_list
             )]
         )]
 
 
-def text_reply(message, body):
+def text_reply(message, body, response_list):
+
+    body = sub_in_users(message, body)
+
     return [TextMessage(
         to=message.from_user,
         chat_id=message.chat_id,
         body=body,
         keyboards=[SuggestedResponseKeyboard(
-            responses=build_keyboard(HEY)
+            responses=response_list
         )]
     )]
 
 
-def link_reply(message, body):
+def link_reply(message, body, response_list):
     url = body['url']
     title = body['title']
 
@@ -44,7 +47,7 @@ def link_reply(message, body):
         url=url,
         title=title,
         keyboards=[SuggestedResponseKeyboard(
-            responses=build_keyboard(HEY)
+            responses=response_list
         )]
     )]
 
@@ -52,7 +55,13 @@ def link_reply(message, body):
 def handle_message(message):
     convo_type = conversation_type(message)
 
-    # Determine key needed for reply
+    # Decide which SR's to Show
+    if convo_type == 'group':
+        response_list = build_keyboard(HEY)
+    else:
+        response_list = build_keyboard(HEY, ['Help'])
+
+    # Determine Event Type
     if message.type not in ('start-chatting', 'text'):
         event = 'Unknown'
 
@@ -64,15 +73,20 @@ def handle_message(message):
     else:
         event = message.body
 
+    # Select Response
     try:
         body = random.choice(CONTENT[event][convo_type])
-    except:
+    except Exception as e:
         event = 'Help'
+        # Help Messaging for 1v1 with another user should be of `group` type
+        if message.mention:
+            convo_type = 'group'
         body = random.choice(CONTENT[event][convo_type])
 
+    # Select Reply Type
     if event == "News":
-        return link_reply(message, body), event
+        return link_reply(message, body, response_list), event
     if event == "Subscribe":
-        return start_chatting_reply(message, body), event
+        return start_chatting_reply(message, body, response_list), event
     else:
-        return text_reply(message, body), event
+        return text_reply(message, body, response_list), event
