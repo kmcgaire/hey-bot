@@ -7,6 +7,7 @@ from kik.messages import SuggestedResponseKeyboard, TextMessage, LinkMessage
 from utils import conversation_type, build_keyboard
 from const import HEY, CONTENT
 
+
 # Hey Fork with categories instead of specifics
 
 # @hey random
@@ -16,122 +17,74 @@ from const import HEY, CONTENT
 # @hey facts
 # @hey games
 
-def start_chatting_reply(message, BODY):
 
+def start_chatting_reply(message, body):
     return [TextMessage(
         to=message.from_user,
         chat_id=message.chat_id,
-        body=BODY[0]
+        body=body[0]
     ),
         TextMessage(
             to=message.from_user,
             delay=500,
             chat_id=message.chat_id,
-            body=BODY[1],
+            body=body[1],
             keyboards=[SuggestedResponseKeyboard(
-            	responses=build_keyboard()
-        )]
+                responses=build_keyboard(HEY)
+            )]
         )]
 
-def text_reply(message, BODY):
 
-	return [TextMessage(
+def text_reply(message, body):
+    return [TextMessage(
         to=message.from_user,
         chat_id=message.chat_id,
-        body=BODY, 
+        body=body,
         keyboards=[SuggestedResponseKeyboard(
-            responses=build_keyboard()
+            responses=build_keyboard(HEY)
         )]
     )]
 
-def link_reply(message, BODY):
 
-	url   = BODY['url']
-	title = BODY['title']
+def link_reply(message, body):
+    url = body['url']
+    title = body['title']
 
-	return [LinkMessage(
-	    to=message.from_user,
-	    chat_id=message.chat_id,
-	    url=url,
-	    title=title,
-	    keyboards=[SuggestedResponseKeyboard(
-	        responses=build_keyboard()
-	    )]
-	)]
-
-def handle_message(message):
-
-	CONVO_TYPE = conversation_type(message)
-
-	# Determine key needed for reply
-	event = message.body
-
-	if message.type not in ('start-chatting', 'text'):
-		event = 'Unknown'
-	
-	if message.type == 'start-chatting':
-		event = 'Subscribe'
-	
-	if message.body in HEY_OPTIONS:
-		event = 'Hey'
-	
-	try:
-		BODY = random.choice(CONTENT[event[CONVO_TYPE]])
-	except Exception as e:
-		event = 'Help'
-		BODY = random.choice(CONTENT[event[CONVO_TYPE]])
-
-
-	if event == "News":
-		return link_reply(BODY)
-	if event == "Subscribe":
-		return start_chatting_reply()
-	else:
-		return text_reply(BODY)
+    return [LinkMessage(
+        to=message.from_user,
+        chat_id=message.chat_id,
+        url=url,
+        title=title,
+        keyboards=[SuggestedResponseKeyboard(
+            responses=build_keyboard(HEY)
+        )]
+    )]
 
 
 def handle_message(message):
-	# Msgs other than text or welcome
-	if message.type not in ('start-chatting', 'text'):
-		reply = basic_reply(message, 'That is quite lovely, but I only respond to text.')
-		return reply, {"action_type": "body_is_not_text", 
-						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
+    convo_type = conversation_type(message)
 
-	# Welcome Message
-	if message.type == 'start-chatting':
-		reply = handle_start_chatting(message)
-		return reply, {"action_type": "start_chatting", 
-						"reply_data":[("reply_body", '|'.join(r.body for r in reply)), ("reply_type", 'start-chatting')]}
+    # Determine key needed for reply
+    event = message.body
 
-	# Respond to empty request
-	if message.body in LUCKY + ['']:
-		reply = basic_reply(message)
-		return reply, {"action_type": "feeling_lucky", 
-						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
+    if message.type not in ('start-chatting', 'text'):
+        event = 'Unknown'
 
-	if mention:
-		main_reply(message)
+    if message.type == 'start-chatting':
+        event = 'Subscribe'
 
-    # Replies to News or SR's with Links
-	if message.body in NEWS.keys():
-		reply = link_reply(message, NEWS)
-		return reply, {"action_type": "news", 
-						"reply_data":[("reply_url", reply[0].url), ("reply_title", reply[0].title), ("reply_type", reply[0].type)]}
-	
-	# Respond to 1v1 help messages
-	if not message.mention:
-		reply = basic_reply(message, random.choice(HELP_1v1))
-		return reply, {"action_type": "help", 
-						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
+    if message.body in HEY:
+        event = 'Hey'
 
-	# Don't reply if it's one of the baked in options
-	if message.body in [msg for sublist in GROUP_MSGS + ONE_ON_ONE_MSGS for msg in sublist]:
-			reply = None
-			return reply, {"action_type": "no_reply", 
-							"reply_data":[]}
-	else:
-		# Group help
-		reply = basic_reply(message, random.choice(HELP_GROUP))
-		return reply, {"action_type": "help", 
-						"reply_data":[("reply_body", reply[0].body), ("reply_type", reply[0].type)]}
+    try:
+        body = random.choice(CONTENT[event][convo_type])
+    except:
+        event = 'Help'
+        body = random.choice(CONTENT[event][convo_type])
 
+    if event == "News":
+        return link_reply(message, body), event
+    if event == "Subscribe":
+        return start_chatting_reply(message, body), event
+    else:
+        return text_reply(message, body), event
