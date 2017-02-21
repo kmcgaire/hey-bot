@@ -21,6 +21,7 @@ def log_metric(in_message, out_message, event):
         in_message.body = None
 
     extraData = buildExtraData(out_message, event)
+
     # Quick Metric Calcs
     n_participants = len(set(in_message.participants))
     # Misclassifies 2 person groups
