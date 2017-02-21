@@ -139,5 +139,5 @@ CONTENT = {
     "Would you rather?": Reply(would_you_rather_reply, 2, text_reply),
     "Truth or Dare": Reply(truth_or_dare_reply, 10, text_reply),
     "Facts": Reply(facts_reply, 2, text_reply),
-    "Help": Reply(help_reply, 2, text_reply)
+    "Help": Reply(help_reply, 1, text_reply)
 }

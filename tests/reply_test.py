@@ -3,7 +3,7 @@ import timeit
 
 from kik.messages import *
 
-sys.path.append('heybot-reply/chalicelib')
+sys.path.append('/Users/rkelly/Projects/heybot/heybot-reply/chalicelib/')
 
 from reply_utils import CONTENT
 from message_handler import handle_message
@@ -43,6 +43,15 @@ hey_group = {
 }
 
 message_tests = [help_1v1, hey_group]
+
+
+# message = messages_from_json([help_1v1['message']])[0]
+# import cProfile
+# pr = cProfile.Profile()
+# pr.enable()
+# handle_message(message)
+# pr.disable()
+# pr.print_stats(sort='time')
 
 
 def generate_reply(msg):
