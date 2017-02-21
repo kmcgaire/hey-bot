@@ -1,10 +1,7 @@
 from kik.messages import *
 from kik import KikApi
-from chalice import Chalice
 
-import requests
-import json
-import datetime
+from chalice import Chalice
 
 from chalicelib import BOT_USERNAME, BOT_API_KEY
 from chalicelib import handle_message, log_metric
@@ -13,7 +10,6 @@ app = Chalice(app_name='heybot')
 app.debug = True
 
 kik = KikApi(BOT_USERNAME, BOT_API_KEY)
-
 
 @app.route('/', methods=['GET'])
 def index():

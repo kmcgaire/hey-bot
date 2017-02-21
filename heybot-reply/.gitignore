@@ -2,4 +2,5 @@
 .chalice/venv/
 secrets.py
 *.pyc
+*.xml
 .idea/*
