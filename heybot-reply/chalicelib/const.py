@@ -14,28 +14,28 @@ ARROW_HEART = u'\U0001F498'
 MONEY_BAGS = u"\U0001F4B0"
 HEART = u"\u2764\uFE0F"
 
-SMALL_TALK_1v1 = ["how are you?",
+SMALL_TALK_1v1 = ["How are you?",
+                  "wyd?",
                   'I miss you. ' + ARROW_HEART,
-                  "what are you up to?",
-                  "im bored... " + SLEEPY,
-                  "when's the last time I said I love you? " + HEART,
-                  "when are you free?",
-                  "want to video chat?",
-                  'what are you doing this weekend?',
+                  "What are you up to?",
+                  "I'm bored... " + SLEEPY,
+                  "When's the last time I said I love you? " + HEART,
+                  "When are you free?",
+                  "Want to video chat?",
+                  'What are you doing this weekend?',
                   "I made a graph of how this conversation is going. " + GRAPH,
-                  'knock knock, anyone here?']
+                  'Knock knock, anyone here?']
 
 SMALL_TALK_GROUP = [
-    "where are you guys from? " + EARTH,
+    "Where are you guys from? " + EARTH,
     "I made a graph of how this conversation is going. " + GRAPH,
-    "anyone want to play truth or dare?",
-    "is anyone here single?",
-    "what have I missed?",
+    "Is anyone here single?",
+    "What have I missed?",
     MUSIC + " what do you guys like to listen to? " + MUSIC,
-    "how old is everyone?",
-    "who's lurking in here? " + PROFILE_PIC,
-    "is anyone here as bored as me? " + SLEEPY,
-    "who else is watching Netflix rn?"
+    "How old is everyone?",
+    "Who's lurking in here? " + PROFILE_PIC,
+    "Is anyone here as bored as me? " + SLEEPY,
+    "Who else is watching Netflix rn?"
 ]
 
 NEWS = [
@@ -62,98 +62,98 @@ NEWS = [
 ]
 
 QUESTIONS_1v1 = [
-    'what is your spirit animal?',
-    'what is the weirdest thing you have ever eaten?',
-    'do you have any cute pets? ' + TURTLE,
-    'do you have any siblings?',
-    'what would you do if you did not have to work?',
-    'what would you do if you had a million dollars? ' + MONEY_BAGS,
-    'what did / do you want to be when you grow up?',
-    "what's your favorite movie?",
-    "what was your most embarrasing moment?",
-    'what is your hidden talent?',
-    'if you could have one super power, what would it be?',
-    'what are you scared of most?',
-    'do you like country music?',
-    'would you ever get a tattoo?',
-    'what are you passionate about?',
-    "what is the one thing you can't live without?",
-    "do you think true love exists?",
-    "whats the one thing you'd wish to own?",
-    "what's your fav TV show rn?",
-    "if you were a vegetable, what would you be?"
+    'What is your spirit animal?',
+    'What is the weirdest thing you have ever eaten?',
+    'Do you have any cute pets? ' + TURTLE,
+    'Do you have any siblings?',
+    'What would you do if you did not have to work?',
+    'What would you do if you had a million dollars? ' + MONEY_BAGS,
+    'What did / do you want to be when you grow up?',
+    "What's your favorite movie?",
+    "What was your most embarrasing moment?",
+    'What is your hidden talent?',
+    'If you could have one super power, what would it be?',
+    'What are you scared of most?',
+    'Do you like country music?',
+    'Would you ever get a tattoo?',
+    'What are you passionate about?',
+    "What is the one thing you can't live without?",
+    "Do you think true love exists?",
+    "Whats the one thing you'd wish to own?",
+    "What's your fav TV show rn?",
+    "If you were a vegetable, what would you be?"
 ]
 
 QUESTIONS_GROUP = [
-    'everyone name your spirit animal?',
-    'what is the weirdest thing everyones eaten?',
-    'anyone have a cute pet? ' + TURTLE,
-    "what would you guys do if you didn't have to work?",
-    'what would you guys do if you had a million dollars? ' + MONEY_BAGS,
-    "everyone name your favorite movie!",
+    'Everyone name your spirit animal?',
+    'What is the weirdest thing everyones eaten?',
+    'Anyone have a cute pet? ' + TURTLE,
+    "What would you guys do if you didn't have to work?",
+    'What would you guys do if you had a million dollars? ' + MONEY_BAGS,
+    "Everyone name your favorite movie!",
     "I dare anyone to say their most embarrasing moment!",
-    'can anyone here play an instrument?',
-    'everyone name a super power they wish they had!',
-    'everyone say their biggest fears, GO!',
-    'anyone actually like country music?',
-    'who would get a tattoo?',
-    "what can't you guys live without?",
-    "does anyone believe in true love here?",
-    "everyone name your favorite TV show, GO!",
-    "if you guys were vegetables, what would you be?"
+    'Can anyone here play an instrument?',
+    'Everyone name a super power they wish they had!',
+    'Everyone say their biggest fears, GO!',
+    'Anyone actually like country music?',
+    'Who would get a tattoo?',
+    "What can't you guys live without?",
+    "Does anyone believe in true love here?",
+    "Everyone name your favorite TV show!",
+    "If you guys were vegetables, what would you be?"
 ]
 
 FLIRT_1v1 = [
-    "my beard is growing its own beard, whats your name? " + WINK,
-    "girl is your name Wifi ? Because I'm feeling a connection!",
-    'you are almost as hot as your mom. ' + WINK,
-    'you look exactly like my future ex-wife.',
-    "is your dad a preacher? Cause you're a blessing.",
-    'you are hotter than the bottom of my laptop. ' + WINK,
-    'you look fabulous...for your age.',
-    'what time do you have to be back in heaven?',
+    "My beard is growing its own beard, whats your name? " + WINK,
+    "Girl is your name Wifi ? Because I'm feeling a connection!",
+    'You are almost as hot as your mom. ' + WINK,
+    'You look exactly like my future ex-wife.',
+    "Is your dad a preacher? Cause you're a blessing.",
+    'You are hotter than the bottom of my laptop. ' + WINK,
+    'You look fabulous...for your age.',
+    'wWhat time do you have to be back in heaven?',
     'A/S/L?',
-    "interested in a man that pays his own cell phone bill?",
-    "do you play Quidditch? Because you look like a Keeper.",
-    "are you Google? Because you're everything I've been searching for.",
-    "on a scale of one to America, how free are you tonight?",
-    "treat me like a pirate and gimme that booty.",
-    "titanic... Thats my ice-breaker.",
-    "what came first, the chicken or the egg?",
+    "Interested in a man that pays his own cell phone bill?",
+    "Do you play Quidditch? Because you look like a Keeper.",
+    "Are you Google? Because you're everything I've been searching for.",
+    "On a scale of one to America, how free are you tonight?",
+    "Treat me like a pirate and gimme that booty.",
+    "Titanic... That's my ice-breaker.",
+    "What came first, the chicken or the egg?",
     "I think I live next door to you!",
-    "havn't we met here before?",
+    "Havn't we met here before?",
     "I don't want to be too forward, but what is your name?",
-    "so how does this work, are we married now?",
-    "if I was drowning would you give me mouth to mouth? " + WINK,
+    "So how does this work, are we married now?",
+    "If I was drowning would you give me mouth to mouth? " + WINK,
     "I think I love you more than I've ever loved myself.",
     "I have scars and tattoos, and make a mean grilled cheese.",
-    "is your middle name Gillette? Because you're the best a man can get.",
+    "Is your middle name Gillette? Because you're the best a man can get.",
     FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, do you want to be my little spoon?"
 ]
 
 FLIRT_GROUP = [
-    "my beard is growing its own beard, anyone wanna DM? " + WINK,
-    "any one here named WiFi? Because I'm feeling a connection!",
-    'one of you looks exactly like my future ex-wife.',
-    "anyones dad a preacher? Cause you're a blessing.",
-    'you guys are hotter than the bottom of my laptop.',
-    "you all look fabulous...for your age. " + WINK,
-    'what time do you guys have to be back in heaven?',
+    "My beard is growing its own beard, anyone wanna DM? " + WINK,
+    "Any one here named WiFi? Because I'm feeling a connection!",
+    'One of you looks exactly like my future ex-wife.',
+    "Anyones dad a preacher? Cause you're a blessing.",
+    'You guys are hotter than the bottom of my laptop.',
+    "You all look fabulous...for your age. " + WINK,
+    'What time do you guys have to be back in heaven?',
     'A/S/L?',
-    "anyone interested in a man that pays his own cell phone bill?",
-    "does anyone play Quidditch? Because you'll be my Keeper.",
-    "are you guys Google? Because you're everything I've been searching for.",
-    "on a scale of one to America, how free are y'all tonight?",
-    "treat me like a pirate and gimme that booty.",
-    "titanic... Thats my ice-breaker.",
-    "what came first, the chicken or the egg?",
+    "Anyone interested in a man that pays his own cell phone bill?",
+    "Does anyone play Quidditch? Because you'll be my Keeper.",
+    "Are you guys Google? Because you're everything I've been searching for.",
+    "On a scale of one to America, how free are y'all tonight?",
+    "Treat me like a pirate and gimme that booty.",
+    "Titanic... That's my ice-breaker.",
+    "What came first, the chicken or the egg?",
     "I think I live next door to you ^^",
     "I don't want to be too forward, but what's everyones name?",
-    "so how does this work, are we all married now?",
-    "if I was drowning who would give me mouth to mouth?. " + WINK,
+    "So how does this work, are we all married now?",
+    "If I was drowning who would give me mouth to mouth?. " + WINK,
     "I think I love you all more than I've ever loved myself.",
     "I have scars and tattoos, and make a mean grilled cheese. Anyone interested?",
-    "anyone here named Gillette? Because you're the best a man can get.",
+    "Anyone here named Gillette? Because you're the best a man can get.",
     FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, anyone want to be my little spoon?"
 ]
 
@@ -195,7 +195,29 @@ FACTS = ["Comets were observed and recorded as early as 239 BC by Chinese astron
          "Calvin Klein's cologne is used by researchers to attract wild animals to cameras.",
          "Dog's feet often smell of corn chips.",
          "Beaver College changed it's name to 'Arcadia' because anti-porn filters blocked access to the school's website.",
-         "In Spain, Mr. Clean is known as Don Limpio."]
+         "In Spain, Mr. Clean is known as Don Limpio.",
+         "'tittle' is the name of the 'dot' over the letter 'i'.",
+         "The largest recorded snowflake was 15 inches wide.",
+         "There are more lifeforms living on your skin than there are people on the planet.",
+         "A single cloud can weight more than 1 million pounds.",
+         "A human will eat on average 70 insects and 10 spiders while sleeping.",
+         "10% of the World's population is left handed.",
+         "A hippo's wide open mouth is big enough to fit a 4-foot-tall child.",
+         "95% of people text things they could never say in person.",
+         "About 150 people per year are killed by coconuts.",
+         "Ketchup was used as a medicine back in the 1930's.",
+         "Chewing gum burns about 11 calories per hour.",
+         "If you try to suppress a sneeze, you can rupture a blood vessel in your head or neck and die.",
+         "Gorillas burp when they are happy.",
+         "It's considered good luck in Japan if a sumo wrestler makes your baby cry.",
+         "Cherophobia is the fear of fun.",
+         "Human thigh bones are stronger than concrete.",
+         "Cockroaches can live for weeks with their heads cut off.",
+         "During your lifetime, you will produce enough saliva to fill two swimming pools.",
+         "Blue-eyed people tend to have the highest tolerance of alcohol.",
+         "Cows kill more people than sharks do.",
+         "You can't hum while holding your nose closed.",
+         "Your nose can remember about 50k scents."]
 
 # GAMES
 WOULD_YOU_RATHER = [
@@ -220,8 +242,15 @@ WOULD_YOU_RATHER = [
     "Have a get out of jail free card OR a key that opens any door?",
     "Have free WiFi OR free coffee?",
     "Have one nipple or two belly buttons?",
-    "Never eat your favorite food for the rest of your life, or only be able to eat your favorite food?",
-    "Let it go or get even"
+    "Never eat your favorite food for the rest of your life, OR only be able to eat your favorite food?",
+    "Let it go OR get even",
+    "Live in the city OR the country?",
+    "Marry someone very rich OR someone who is very beautiful?",
+    "Date someone who is 5 years older OR someone 5 years younger?",
+    "Have an arranged marriage OR spend the rest of your life single?",
+    "Go to jail for a year OR be homeless for a year?",
+    "Be rich with no friends OR poor with lots of good friends?",
+    "Never touch your phone again OR never touch a human again?",
 
 ]
 
@@ -304,28 +333,10 @@ TRUTH_OR_DARE_GROUP = [
 FRIENDSHIP_TEST = ["When did I have my first kiss?"]
 UNSCRAMBLE = []
 
-CATEGORIES = []
+CATEGORIES = ['cars']
 RHYME_TIME = []
 EMOJI_STORY = []
 
-NAMES = [
-    "Rachael Ray",
-    "Batman",
-    "Oprah",
-    "Justin B",
-    "Kim K",
-    "R Kelly",
-    "James Bond",
-    "Ant Man",
-    "Dora the Explorer",
-    "John Cena",
-    "Ron Weasley",
-    "Kanye",
-    "Drake",
-    "Kylie J",
-    "your Mom",
-    "your teacher"
-]
 hey_options = ["Hey", "Random", WAVE_HAND, "Surprise me"]
 
 UNKNOWN = ["Aww, you are so cute. Use your words next time."]
