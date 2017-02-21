@@ -1,7 +1,6 @@
-from kik.messages import *
-from kik import KikApi
-
 from chalice import Chalice
+from kik import KikApi
+from kik.messages import *
 
 from chalicelib import BOT_USERNAME, BOT_API_KEY
 from chalicelib import handle_message, log_metric

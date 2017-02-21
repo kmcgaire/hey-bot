@@ -1,8 +1,8 @@
-from kik.messages import SuggestedResponseKeyboard, TextMessage, LinkMessage
-
-import random
 import copy
+import random
 import re
+
+from kik.messages import SuggestedResponseKeyboard, TextMessage, LinkMessage
 
 from const import *
 
@@ -112,7 +112,6 @@ class Reply:
             return random.choice(self.replies)
 
     def build_keyboard(self, message):
-        responses = []
         hey_choice = [TextResponse(random.choice(hey_options))]  # hey_options from global
 
         responses = hey_choice + basic_keyboard

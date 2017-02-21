@@ -2,7 +2,7 @@ import sys
 import timeit
 
 from kik.messages import *
-# the mock-0.3.1 dir contains testcase.py, testutils.py & mock.py
+
 sys.path.append('heybot-reply/chalicelib')
 
 from reply_utils import CONTENT

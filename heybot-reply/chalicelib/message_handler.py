@@ -7,7 +7,7 @@ def handle_message(message):
     try:
         reply = CONTENT[event_name]
         return reply.reply(message), event_name
-    except Exception as e:
+    except Exception:
         event_name = 'Help'
         reply = CONTENT[event_name]
         return reply.reply(message), event_name
