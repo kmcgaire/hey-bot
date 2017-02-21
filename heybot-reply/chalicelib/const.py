@@ -1,3 +1,5 @@
+from kik.messages import TextResponse
+
 FORK = u"\U0001F374"
 GRAPH = u"\U0001F4C9"
 WAVE_HAND = u"\U0001F44B"
@@ -155,7 +157,7 @@ FLIRT_GROUP = [
     FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, anyone want to be my little spoon?"
 ]
 
-HEY = ["Hey", "Random", WAVE_HAND, "Surprise me"]
+hey_options = ["Hey", "Random", WAVE_HAND, "Surprise me"]
 
 HELP_GROUP = ["I can't do all the talking here...",
               "I'm just trying to help you guys out...",
@@ -198,69 +200,115 @@ FACTS = ["Comets were observed and recorded as early as 239 BC by Chinese astron
          "In Spain, Mr. Clean is known as Don Limpio."]
 
 # GAMES
-WOULD_YOU_RATHER = ["Lose your money OR all of your photos?",
-                    "Go to jail for 5 years for something you didn't do OR Walk free and live in fear of being caught?",
-                    "Netflix or Chill?",
-                    "Get $1000 OR a kiss from {}?",
-                    "{} or {}?",
-                    "{}'s eyes or {}'s hair?",
-                    "1$ or {}'s friendship?",
-                    "Live in a perfect virtual reality OR the real world?",
-                    "Give up Neflix OR texting?",
-                    "Be able to fly OR Always be invisible.",
-                    "Be poor but help people OR be rich and hurt people?",
-                    "Would you rather find true love OR 1 Million dollars?",
-                    "Be transported 500 years into the past OR the future?",
-                    "Be able to control fire OR control water?",
-                    "Have unlimited sushi OR unlimited tacos?",
-                    "Give up bathing OR give up the internet for a month?"
-                    "Be married to a 10/10 psycho OR a 5/10 with great personality?",
-                    "Be constantly tired OR constantly hungry?",
-                    "Be an amazing painter or a brilliant mathematician?",
-                    "Would you rather have a get out of jail free card OR a key that opens any door?"]
+WOULD_YOU_RATHER = [
+    "Lose your money OR all of your photos?",
+    "Netflix or Chill?",
+    "Get $1000 OR a kiss from {}?",
+    "{} or {}?",
+    "{}'s eyes or {}'s hair?",
+    "1$ or {}'s friendship?",
+    "Live in a perfect virtual reality OR the real world?",
+    "Give up Neflix OR texting?",
+    "Be able to fly OR Always be invisible.",
+    "Be poor but help people OR be rich and hurt people?",
+    "Would you rather find true love OR 1 Million dollars?",
+    "Be transported 500 years into the past OR the future?",
+    "Be able to control fire OR control water?",
+    "Have unlimited sushi OR unlimited tacos?",
+    "Give up bathing OR give up the internet for a month?"
+    "Be married to a 10/10 psycho OR a 5/10 with great personality?",
+    "Be constantly tired OR constantly hungry?",
+    "Be an amazing painter or a brilliant mathematician?",
+    "Have a get out of jail free card OR a key that opens any door?",
+    "Have free WiFi OR free coffee?",
+    "Have one nipple or two belly buttons?",
+    "Never eat your favorite food for the rest of your life, or only be able to eat your favorite food?",
+    "Let it go or get even"
 
-TRUTH_OR_DARE = ["I'll go first. I Dare {} to emoji Kiss {}",
-                 "I dare {} to do their homework for once.",
-                 "I dare {} to text {} a dark secret",
-                 "I dare {} to text me a dark secret",
-                 "I dare {} to go on video chat.",
-                 "I dare {} to eat a banana with the skin on.",
-                 "I dare {} to pick their nose on video.",
-                 "I dare {} to post the first pic from their gallery.",
-                 "I dare everyone to post the first pic from their gallery.",
-                 "I dare {} to post the most recent pic from their gallery.",
-                 "I dare everyone to post the most recent pic from their gallery."
+]
 
-                 # Truths
-                 "Me first, {}, when's the last time you pooped?",
-                 "Would {} swipe-right {}?",
-                 "Would {} swipe-left {}?",
-                 "{}, do you have a crush on {}?",
-                 "{}, what qualities do you want in a spouse?",
-                 "{}, what's your fav chick flick?",
-                 "{}, have you ever skinny dipped?",
-                 "{}, what is the stupidest thing you've done?",
-                 "{}, what was the last lie you told?",
-                 "{}, have you ever cheated on someone?",
-                 "{}, have you ever went for a run, then ate a pizza right after?",
-                 "{}, would you mind being the opposite sex for a day?",
-                 "{}, ever had a crush on a teacher?",
-                 "{}, ever had a crush on a {}?",
-                 "{}, ever had a crush on a anyone in this chat?",
-                 "{}, ever had a one-night stand?",
-                 "{}, have you ever stole something?",
-                 "{}, whats your favorite feature about the opposite sex?"
-                 "{}, whats your favorite feature about {}?"
-                 ]
+TRUTH_OR_DARE_1v1 = [
+    "I'll go first. I Dare {} to emoji Kiss {}",
+    "I dare {} to do their homework for once.",
+    "I dare {} to only talk with emoji's for 5 minutes.",
+    "I dare {} to text {} a dark secret",
+    "I dare {} to text me a dark secret",
+    "I dare {} to go on video chat.",
+    "I dare anyone to go on video chat right now.",
+    "I dare {} to eat a banana with the skin on.",
+    "I dare {} to pick their nose on video.",
+    "I dare {} to post the first pic from their gallery.",
+    "I dare anyone to post the first pic from their gallery.",
+    "I dare {} to post the oldest pic from their gallery.",
+    "I dare anyone to post the oldest pic from their gallery.",
+    "I dare {} to send a picture of yourself right now",
+    "I dare {} to send a picture of whatever is in front of your right now",
+
+    # Truths
+    "{}, would you marry for money?",
+    "{}, how do you feel about the end pieces of a loaf of bread?",
+    "Me first, {}, when's the last time you pooped?",
+    "Would {} swipe-right {}?",
+    "Would {} swipe-left {}?",
+    "{}, do you have a crush on {}?",
+    "{}, what's your fav chick flick?",
+    "{}, have you ever skinny dipped?",
+    "{}, what was the last lie you told?",
+    "{}, have you ever cheated on someone?",
+    "{}, have you ever went for a run, then ate a pizza right after?",
+    "{}, would you mind being the opposite sex for a day?",
+    "{}, ever had a crush on a teacher?",
+    "{}, ever had a crush on a {}?",
+    "{}, ever had a crush on a anyone in this chat?",
+    "{}, ever had a one-night stand?",
+    "{}, have you ever stole something?",
+    "{}, whats your favorite feature about the opposite sex?",
+    "{}, whats your favorite feature about {}?"
+]
+TRUTH_OR_DARE_GROUP = [
+    "I'll go first. I Dare {} to emoji Kiss {}",
+    "I dare anyone to text {} a dark secret",
+    "I dare anyone to text me a dark secret",
+    "I dare anyone to go on video chat right now.",
+    "I date anyone to only talk with emoji's for 5 minutes.",
+    "I dare anyone to pick their nose on video.",
+    "I dare {} to post the first pic from their gallery.",
+    "I dare anyone to post the first pic from their gallery.",
+    "I dare {} to post the oldest pic from their gallery.",
+    "I dare anyone to post the oldest pic from their gallery.",
+    "I dare anyone to send a picture of yourself right now",
+    "I dare anyone to send a picture of whatever is in front of your right now",
+
+    # Truths
+    "What is your worst fear?",
+    "How do you feel about the end pieces of a loaf of bread?",
+    "Would anyone here marry for money?",
+    "Say the last time you pooped",
+    "Would anyone swipe-right {}?",
+    "Would anyone swipe-left {}?",
+    "Would anyone swipe-right me?",
+    "Would anyone swipe-left me?",
+    "Does anyone have a crush on {}?",
+    "Anyone have a crush on me?",
+    "Everyone name their fav chick flick",
+    "Who has ever skinny dipped?",
+    "Has anyone here cheated on someone?",
+    "Has anyone went for a run, then ate a pizza right after?",
+    "Would you mind being the opposite sex for a day?",
+    "Anyone ever had a crush on a teacher?",
+    "Anyone ever had a crush on a anyone in this chat?",
+    "Is anyone's crush also in this chat?",
+    "Has anyone ever stolen something?",
+    "Say your favorite feature about the opposite sex?",
+    "Say your favorite feature about {}?"
+]
 
 FRIENDSHIP_TEST = ["When did I have my first kiss?"]
 UNSCRAMBLE = []
 
-
 CATEGORIES = []
 RHYME_TIME = []
 EMOJI_STORY = []
-
 
 NAMES = [
     "Rachael Ray",
@@ -279,24 +327,29 @@ NAMES = [
     "Kylie J",
     "your Mom",
     "your teacher"
-  ]
+]
 
 UNKNOWN = ["Aww, you are so cute. Use your words next time."]
 
 START_CHATTING = [["I'm a bot that helps start conversations.",
                    "Don't know what to say? Just type @hey!"]]
 
-CONTENT = {
-    "Unknown": {"group": UNKNOWN, "1v1": UNKNOWN},
-    "Subscribe": {'1v1': START_CHATTING},
+unknown_reply = UNKNOWN
+subscribe_reply = START_CHATTING
+hey_reply = {"group": SMALL_TALK_GROUP + QUESTIONS_GROUP, '1v1': SMALL_TALK_1v1 + QUESTIONS_1v1}
+news_reply = NEWS
+small_talk_reply = {"group": SMALL_TALK_GROUP, '1v1': SMALL_TALK_1v1}
+flirt_reply = {"group": FLIRT_GROUP, '1v1': FLIRT_1v1}
+questions_reply = {"group": QUESTIONS_GROUP, '1v1': QUESTIONS_1v1}
+would_you_rather_reply = {'group': WOULD_YOU_RATHER, '1v1': WOULD_YOU_RATHER}
+truth_or_dare_reply = {'group': TRUTH_OR_DARE_GROUP, '1v1': TRUTH_OR_DARE_1v1}
+facts_reply = FACTS
+help_reply = {"group": HELP_GROUP, '1v1': HELP_1v1}
 
-    "Hey": {"group": SMALL_TALK_GROUP + QUESTIONS_GROUP, '1v1': SMALL_TALK_1v1 + QUESTIONS_1v1},
-    "News": {"group": NEWS, '1v1': NEWS},
-    "Small Talk": {"group": SMALL_TALK_GROUP, '1v1': SMALL_TALK_1v1},
-    "Flirt": {"group": FLIRT_GROUP, '1v1': FLIRT_1v1},
-    "Questions": {"group": QUESTIONS_GROUP, '1v1': QUESTIONS_1v1},
-    "Would you rather?": {'group': WOULD_YOU_RATHER, '1v1': WOULD_YOU_RATHER},
-    "Truth or Dare": {'group': TRUTH_OR_DARE, '1v1': TRUTH_OR_DARE},
-    "Facts": {'group': FACTS, '1v1': FACTS},
-    "Help": {"group": HELP_GROUP, '1v1': HELP_1v1}
-}
+basic_keyboard = [TextResponse("Small Talk"),
+                  TextResponse('Flirt'),
+                  TextResponse("Questions"),
+                  TextResponse("News"),
+                  TextResponse("Truth or Dare"),
+                  TextResponse("Would you rather?"),
+                  TextResponse("Facts")]
