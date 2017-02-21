@@ -130,6 +130,7 @@ class Reply:
 
 
 CONTENT = {
+    "Unknown": Reply(unknown_reply, None, text_reply),
     "Subscribe": Reply(subscribe_reply, None, start_chatting_reply),
     "Hey": Reply(hey_reply, 2, text_reply),
     "News": Reply(news_reply, 2, link_reply),

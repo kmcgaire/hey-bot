@@ -157,8 +157,6 @@ FLIRT_GROUP = [
     FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, anyone want to be my little spoon?"
 ]
 
-hey_options = ["Hey", "Random", WAVE_HAND, "Surprise me"]
-
 HELP_GROUP = ["I can't do all the talking here...",
               "I'm just trying to help you guys out...",
               "How about you hit 'reply' and try those instead?",
@@ -184,7 +182,7 @@ HELP_1v1 = ["@hey helps you get conversations started with friends. Type @hey in
             "Confusion Detected: Please try typing @hey in a group.",
             "You realize it's just me and you in here right? Type @hey in a group.",
             "This is awkward, have I told you I'm a robot?",
-            "I don't get paid enough for this. You are supposed to type @hey in a group!",
+            "I don't get paid enough for this. You are supposed to type @hey in a group!"
             ]
 
 FACTS = ["Comets were observed and recorded as early as 239 BC by Chinese astronomers.",
@@ -328,12 +326,14 @@ NAMES = [
     "your Mom",
     "your teacher"
 ]
+hey_options = ["Hey", "Random", WAVE_HAND, "Surprise me"]
 
 UNKNOWN = ["Aww, you are so cute. Use your words next time."]
 
 START_CHATTING = [["I'm a bot that helps start conversations.",
                    "Don't know what to say? Just type @hey!"]]
 
+# Organize Constants
 unknown_reply = UNKNOWN
 subscribe_reply = START_CHATTING
 hey_reply = {"group": SMALL_TALK_GROUP + QUESTIONS_GROUP, '1v1': SMALL_TALK_1v1 + QUESTIONS_1v1}
