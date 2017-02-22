@@ -25,6 +25,23 @@ help_1v1 = {
             }
 }
 
+help_grp = {
+    "Name": "help_grp",
+    "expected_reply": CONTENT['Help'].replies['group'],
+    "message": {
+                "chatId": "0ee6d46753bfa6ac2f089149959363f3f59ae62b10cba89cc426490ce38ea92d",
+                "id": "0115efde-e54b-43d5-873a-5fef7adc69fd",
+                "type": "text",
+                "from": "rmdkelly",
+                "participants": ["rmdkelly", "cacolve"],
+                "body": "omg r u real?",
+                "timestamp": 1439576628405,
+                "readReceiptRequested": True,
+                "mention": None,
+                "metadata": None
+            }
+}
+
 hey_group = {
     "Name": "hey_group",
     "expected_reply": CONTENT['Hey'].replies['group'],
@@ -42,7 +59,7 @@ hey_group = {
             }
 }
 
-message_tests = [help_1v1, hey_group]
+message_tests = [help_1v1, help_grp, hey_group,]
 
 
 # message = messages_from_json([help_1v1['message']])[0]
