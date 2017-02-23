@@ -157,19 +157,15 @@ FLIRT_GROUP = [
     FORK + ' ' + FORK + ' ' + FORK + " I've got all these forks and knives, anyone want to be my little spoon?"
 ]
 
-HELP_GROUP = ["I can't do all the talking here...",
-              "I'm just trying to help you guys out...",
+HELP_GROUP = ["I can't do all the talking here... Hit 'reply' or type @hey.",
               "How about you hit 'reply' and try those instead?",
               "Hit 'reply'... you'll thank me.",
-              "Nah... Try something I've prepared for you instead.",
-              "smh... Try again.",
-              "Was that really what you meant to say?",
-              "Let's not and say we did...",
-              "If I had a dollar for every time someone told me that...",
-              "You are making me feel old...",
-              "Sometimes, I just don't understand kids these days.",
-              "You don't seem to understand what's happening here...",
-              "I don't get paid enough for this.",
+              "smh... Hit 'reply' or type @hey.",
+              "If I had a dollar for every time someone told me that... Hit 'reply' or type @hey instead.",
+              "You are making me feel old... Hit 'reply' or type @hey instead.",
+              "Sometimes I just don't understand kids these days. Hit 'reply' or type @hey instead.",
+              "You don't seem to understand what's happening here... Hit 'reply' or type @hey instead.",
+              "I don't get paid enough for this. Hit 'reply' or type @hey instead.",
               ]
 
 HELP_1v1 = ["@hey helps you get conversations started with friends. Type @hey in another chat.",
